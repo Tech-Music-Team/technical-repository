@@ -1,0 +1,348 @@
+/*Fonte tipográfica*/
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Paleta de cores*/
+:root{
+    --branco: white;     
+    --roxo: #A939CF ;     
+    --rosa: #D421BF ;     
+    --preto: black;
+
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-destaque: 'Exo 2', sans-serif;
+}
+body{
+      background-color: white;
+      background-repeat: no-repeat;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--fonte-principal);    
+}
+html, body {
+    overflow-x: hidden;
+}
+
+.header{
+    top: 0px;
+    margin: 0px;
+    background-color: white;
+    z-index: 1000;
+    width: 100%;
+    height: 8%;
+    box-shadow: 5px 5px 10px 0 var(--rosa);
+    padding: 10px 20px;
+    position: fixed;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.menus{
+    display: flex;
+    gap: 100px;
+}
+header li{
+    text-decoration: none;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+}
+.cad{
+    font-size: 16px;
+    position: relative;
+    top: -10px;
+    right: 40px;
+}
+.botao{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.login{
+    position: relative;
+    right: 30px;
+}
+
+/*Banner*/
+.banner{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.banner_titulo{
+    display: flex;
+    flex-direction: row
+}
+.textos{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 190px;
+}
+.titulo{
+    font-size: 40px;
+}
+.circulo{
+    width: 350px;
+    position: relative;
+    top: 100px;
+    left: -50px;
+}
+.vamos{
+    width: 150px;
+}
+
+.transicao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center ;
+    gap: 160px;
+    margin-top: 200px;
+}
+.linha1{
+    width: 500px;
+}
+.linha2{
+    width: 500px;
+}
+.seta{
+    width: 10%;
+}
+
+/*Section 2*/
+.sobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+    margin-top: 100px;
+}
+.sobre h1, h3{
+    font-weight: 200;
+}
+
+.sobre h1{
+    font-size: 50px;
+}
+.sobre h3{
+    font-size: 30px;
+}
+
+/*LETRAS - Carrossel Infinito*/
+.carrosell_letras {
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 100vw;
+    margin-top: 100px;
+}
+.carrosell_pista {
+    display: inline-flex;
+    animation: deslizar-letras 15s linear infinite; 
+}
+
+.carrosell_letras h2 {
+    font-weight: 200;
+    font-size: 50px;
+    margin: 0;
+    padding: 0 20px;
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+}
+@keyframes deslizar-letras {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.33%); 
+    }
+}
+/*section atuação*/
+.atuacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+    margin-top: 150px;
+}
+.texto_atuacao h1{
+    font-weight: 400;
+    text-align: center;
+}
+.texto_atuacao h3{
+    font-weight: 200;
+    text-align: center;
+}
+.dj{
+    width: 500px;
+}
+
+.instrumentos{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+.instrumento1{
+    width: 450px;
+    border-radius: 50px;
+}
+.instrumento2{
+    width: 450px;
+    border-radius: 50px;
+}
+/*Contato*/
+.contato{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px var(--rosa);
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: -4px;
+    padding: 80px 0;
+}
+.titulo_contato{
+    font-weight: 400;
+    font-size: 40px;
+}
+.nome_email{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+.nome_email input{
+    background-color: white;
+    border-radius: 5px;
+    border-color: #A939CF;
+    width: 500px;
+    padding: 15px;
+}
+.nome_email input::placeholder{
+    font-family: var(--fonte-principal);
+}
+
+.telefone_segmento{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+.telefone_segmento input{
+    background-color: white;
+    border-radius: 5px;
+    border-color: #A939CF;
+    width: 500px;
+    padding: 15px;
+}
+
+.telefone_segmento input::placeholder{
+    font-family: var(--fonte-principal);
+}
+
+.ajudar input{
+    background-color: white;
+    border-radius: 5px;
+    border-color: #A939CF;
+    width: 1070px;
+    padding:70px;
+}
+.ajudar input::placeholder{
+    font-family: var(--fonte-principal);
+}
+.botao_enviar{
+    width: 200px;
+}
+
+/*Desenvolvedores*/
+.desenvolvedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px; 
+}
+.linhas{
+    display: flex;
+    flex-direction: row;
+    gap: 350px;
+}
+.titulo_desenvolvedor h1{
+    font-weight: 300;
+    text-align: center;
+    color: var(--rosa);
+    font-size: 54px;
+}
+
+.perfil{
+    padding: 20px;
+}
+.integrante h1{
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--roxo) ;
+} 
+
+/*FOOTER*/
+.footer {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 200px; 
+}
+
+.footer_logo {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    gap: 30px;
+}
+
+.logo_footer {
+    width: 180px;
+    object-fit: contain;
+}
+
+.divisoria {
+    width: 2px;
+    height: 120px;
+}
+.indice {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+.indice_texto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.indice_texto h2 {
+    color: var(--roxo);
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+.indice_texto h3 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 300;
+    cursor: pointer;
+}
