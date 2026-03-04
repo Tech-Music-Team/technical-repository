@@ -18,10 +18,13 @@ body{
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      font-family: var(--fonte-principal);    
+      font-family: var(--fonte-principal);
 }
 html, body {
     overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
 }
 
 .header{
@@ -278,6 +281,16 @@ a{
     flex-direction: row;
     gap: 350px;
 }
+.linha2_dev{
+    display: flex;
+    flex-direction: column;
+}
+
+.linha2_dev h1{
+    position: relative;
+    top: 90px;
+}
+
 .titulo_desenvolvedor h1{
     font-weight: 300;
     text-align: center;
@@ -287,6 +300,11 @@ a{
 
 .perfil{
     padding: 20px;
+}
+.foto_perfil{
+    width: 90px;
+    border-radius: 70px;
+    border-color: none;
 }
 .integrante h1{
     font-size: 34px;
