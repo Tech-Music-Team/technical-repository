@@ -26,7 +26,6 @@ html, body {
 html{
     scroll-behavior: smooth;
 }
-
 .header{
     top: 0px;
     margin: 0px;
@@ -48,6 +47,16 @@ nav {
     display: flex;
     gap: 100px;
 }
+
+.menus_ind{
+    transition: transform 0.3s ease-in-out;
+    display: block;
+}
+.menus_ind:hover{
+    transform: scale(1.3);
+    color: var(--rosa);
+}
+
 header li{
     text-decoration: none;
     list-style-type: none;
@@ -57,20 +66,40 @@ a{
     color: white;
     list-style-type: none;
 }
-.cad{
-    font-size: 16px;
-    position: relative;
-    top: -10px;
-    right: 40px;
+.botao .cad{
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+
 }
+.botao .cad:hover{
+    transform: scale(1.3);
+    color: var(--rosa);
+}
+
 .botao{
     display: flex;
-    flex-direction: row;
     gap: 30px;
 }
-.login{
-    position: relative;
-    right: 30px;
+
+.botao .login{
+    background-image: url(../image/Botão_Login.png);
+    transition: transform 0.3s ease-in-out;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    background-color: transparent;
+    width: 125px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+}
+.botao .login:hover{
+    transform: scale(1.15);
+    background-image: url(../image/Botão_Login_frame.png);
 }
 
 /*Banner*/
@@ -79,10 +108,26 @@ a{
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   margin-top: 135px;
 }
 .banner_titulo{
-    display: flex;
-    flex-direction: row
+     display: flex;
+    flex-direction: row;
+}
+.titulo{
+    animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    0%{
+        text-shadow: 0px 0px 15px var(--rosa);
+
+    }
+    
+    100%{
+        text-shadow: 0px 0px 0px transparent;
+    }
+
 }
 .textos{
     display: flex;
@@ -99,8 +144,23 @@ a{
     top: 100px;
     left: -50px;
 }
-.vamos{
-    width: 150px;
+.botao_vamos {
+    background-image: url(../image/vamos.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: transform 0.3s ease-in-out;
+    width: 170px;
+    height: 50px;
+    display: block;
+}
+
+.botao_vamos:hover {
+    background-image: url(../image/vamos_frame.png);
+    transform: scale(1.19);
 }
 
 .transicao{
@@ -109,16 +169,34 @@ a{
     align-items: center;
     justify-content:center ;
     gap: 160px;
-    margin-top: 200px;
+    margin-top: 250px;
 }
-.linha1{
-    width: 500px;
+.linha1, .linha2{
+    width: 350px;
 }
-.linha2{
-    width: 500px;
-}
+
 .seta{
-    width: 10%;
+    width: 0px;
+    height: 0px;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 60px solid var(--roxo);
+
+    animation: zoom 1.5s infinite;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.30);
+    }
+
+    50%{
+        transform: scale(1.00);
+
+    }
+    100%{
+        transform: scale(1.30);
+    }
 }
 
 /*Section 2*/
@@ -129,12 +207,11 @@ a{
     justify-content: center;
     font-family: var(--fonte-destaque);
     text-align: center;
-    margin-top: 100px;
+    margin-top: 200px;
 }
 .sobre h1, h3{
     font-weight: 200;
 }
-
 .sobre h1{
     font-size: 50px;
 }
@@ -178,31 +255,34 @@ a{
     align-items: center;
     justify-content: center;
     gap: 20%;
-    margin-top: 150px;
+    margin-top: 25px;
 }
+
 .texto_atuacao h1{
     font-weight: 400;
     text-align: center;
+    margin-bottom: 30px;
 }
 .texto_atuacao h3{
     font-weight: 200;
     text-align: center;
+    margin-bottom: 30px;
 }
 .dj{
-    width: 500px;
+    width: 550px;
 }
-
 .instrumentos{
     display: flex;
     flex-direction: column;
     gap: 70px;
+    margin-bottom: 100px;
 }
 .instrumento1{
-    width: 450px;
+    width: 400px;
     border-radius: 50px;
 }
 .instrumento2{
-    width: 450px;
+    width: 400px;
     border-radius: 50px;
 }
 /*Contato*/
@@ -216,6 +296,7 @@ a{
     gap: 30px;
     margin-top: -4px;
     padding: 80px 0;
+    padding-top:210px;
 }
 .titulo_contato{
     font-weight: 400;
@@ -292,22 +373,22 @@ a{
 }
 
 .titulo_desenvolvedor h1{
-    font-weight: 300;
+    font-weight: 200;
     text-align: center;
     color: var(--rosa);
-    font-size: 54px;
+    font-size: 34px;
 }
 
 .perfil{
     padding: 20px;
 }
 .foto_perfil{
-    width: 90px;
-    border-radius: 70px;
+    width: 80px;
+    border-radius: 90px;
     border-color: none;
 }
 .integrante h1{
-    font-size: 34px;
+    font-size: 24px;
     font-weight: 300;
     color: var(--roxo) ;
 } 
@@ -358,9 +439,13 @@ a{
     margin: 0 0 10px 0;
     font-weight: 600;
 }
-.indice_texto h3 {
+.indice_texto a {
     font-size: 14px;
     margin: 0;
     font-weight: 300;
     cursor: pointer;
+    transition: transform 0.09s ease-in-out;
+}
+.indice_texto a:hover{
+    transform: scale(1.10);
 }

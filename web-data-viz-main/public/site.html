@@ -7,7 +7,6 @@
     <title>Conheça a Tech Music Team!</title>
     <link rel="stylesheet" href="assets/css/site.css">
 </head>
-
 <body>
     <header class="header">
         <nav>
@@ -15,14 +14,14 @@
                 <img src="assets/image/Logo 1.png" class="logo" width="100px">
             </div>
             <ul class="menus">
-                <li><a href="#inicio">ÍNICIO</a></li>
-                <li><a href="#atuacao">SOBRE</a></li>
-                <li><a href="#contato">CONTATO</a></li>
-                <li><a href="#dev">DESENVOLVEDOR</a></li>
+                <li><a class="menus_ind" href="#inicio">ÍNICIO</a></li>
+                <li><a class="menus_ind" href="#atuacao">SOBRE</a></li>
+                <li><a class="menus_ind" href="#contato">CONTATO</a></li>
+                <li><a class="menus_ind" href="#dev">DESENVOLVEDOR</a></li>
             </ul>
             <ul class="botao">
-                <li><a href="" class="cad">CADASTRAR</a>
-                    <img class="login" src="assets/image/Botão_Login.png" width="100px"></h1>
+                <a class="cad" href="./cadastro.html" >CADASTRAR</a>
+                <a class="login" href="./login.html"></a>
             </ul>
         </nav>
     </header>
@@ -31,16 +30,13 @@
             <div class="banner_titulo">
                 <img class="circulo" src="assets/image/TMT - BANNER.png">
                 <div class="textos">
-                    <h1 class="titulo">VAMOS AGITAR SEU<br>
-                        SHOW!</h1>
-                    <div class="botao_vamos">
-                        <img class="vamos" src="assets/image/vamos.png">
-                    </div>
+                    <h1 class="titulo">VAMOS AGITAR SEU<br>SHOW!</h1>
+                    <a href="./cadastro.html" class="botao_vamos"></a>
                 </div>
             </div>
             <div id="inicio" class="transicao">
                 <img class="linha1" src="assets/image/Rectangle 9.png">
-                <img class="seta" src="assets/image/seta.png">
+                <div id="seta" class="seta"><a href="#inicio"></a></div>
                 <img class="linha2" src="assets/image/Rectangle 10.png">
             </div>
         </section>
@@ -81,10 +77,10 @@
                     <span>•</span>
                     <span style="color: var(--preto);">ALEGRIA</span>
                 </h2>
-            </div >
+            </div>
         </section>
         <section class="atuacao">
-            <div class="texto_atuacao" >
+            <div class="texto_atuacao">
                 <h1>Nossa <a style="color: #D421BF;">atuação</a></h1>
                 <h3>Nossa solução propõe aplicar um software que exiba <br>
                     os melhores caminhos para construir <br>
@@ -113,21 +109,19 @@
             <div class="ajudar">
                 <input type="text" placeholder="Como podemos ajudar?">
             </div>
-            <div class="enviar">
-                <img class="botao_enviar" src="assets/image/enviar.png">
-            </div id="dev">
+            <div class="enviar" id="dev">
+                <a href=""class="botao_enviar"></a> 
+            </div>
         </section>
 
-        <section  class="desenvolvedor">
+        <section class="desenvolvedor">
             <div class="titulo_desenvolvedor">
                 <h1>DESENVOLVEDORES</h1>
             </div>
-
             <div class="linhas">
-
                 <div class="linha1_dev">
                     <div class="perfil">
-                        
+
                         <img class="foto_perfil" src="./assets/integrantes/ale.png">
                         <div class="integrante">
                             <h1>Alexandre</h1>
@@ -135,7 +129,7 @@
                         </div>
                     </div>
                     <div class="perfil">
-                        
+
                         <img class="foto_perfil" src="./assets/integrantes/breno.jpg">
                         <div class="integrante">
                             <h1>Breno</h1>
@@ -143,8 +137,7 @@
                         </div>
                     </div>
                     <div class="perfil">
-                        <!-- Colocar a foto dos integrantes -->
-                        <img class="foto_perfil" src="">
+                        <img class="foto_perfil" src="./assets/integrantes/ever.png">
                         <div class="integrante">
                             <h1>Everton</h1>
                             <img src="assets/image/Line 5.png">
@@ -188,10 +181,10 @@
             <div class="indice">
                 <div class="indice_texto">
                     <h2>Saiba Mais</h2>
-                    <h3>ÍNICIO</h3>
-                    <h3>SOBRE</h3>
-                    <h3>CONTATO</h3>
-                    <h3>DESENVOLVEDORES</h3>
+                    <a href="#inicio">ÍNICIO</a>
+                    <a href="#atuacao">SOBRE</a>
+                    <a href="#contato">CONTATO</a>
+                    <a href="#dev">DESENVOLVEDORES</a>
                 </div>
                 <div class="indice_texto">
                     <h2>Fale Conosco</h2>
@@ -201,13 +194,12 @@
                 <div class="indice_texto">
                     <h2>Onde estamos</h2>
                     <h3>Rua Haddock Lobo, 595 <br>
-                     Cerqueira César, São Paulo</h3>
+                        Cerqueira César, São Paulo</h3>
                 </div>
             </div>
         </footer>
 
     </main>
-
 
 </body>
 
