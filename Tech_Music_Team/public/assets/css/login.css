@@ -1,0 +1,126 @@
+/*Fonte tipográfica*/
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Paleta de cores*/
+:root{
+    --branco: white;     
+    --roxo: #A939CF ;     
+    --rosa: #D421BF ;     
+    --preto: black;
+
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-destaque: 'Exo 2', sans-serif;
+}
+.login {
+  margin-left: 5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.login h1{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: var(--fonte-principal);
+  overflow: hidden;
+}
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-height: 650px;
+}
+.conteudo-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.conteudo-login h1{
+  color: var(--rosa);
+}
+.conteudo-login div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.conteudo-login div p {
+  font-weight: 400;
+  color: var(--rosa);
+}
+.conteudo-login .input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.conteudo-login .input-group:focus-within i {
+  color:var(--rosa);
+}
+.conteudo-login .input-group input {
+  width: 450px;
+  height: 2.425rem;
+  border-radius: 5px;
+  border: 0.1rem solid var(--roxo);
+  padding-left: 3rem;
+  background-color: #d9d9d9;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.conteudo-login .input-group input:focus {
+  border: 0.1rem solid var(--rosa);
+  outline: none;
+}
+
+.conteudo-login .input-group i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--roxo);
+  font-size: 1rem;
+  font-weight: 200px;
+}
+
+.conteudo-login div button {
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color:var(--roxo);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+.conteudo-login div button:hover {
+  background-color: var(--rosa);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+h1 {
+  font-size: 34px;
+  color: var(--roxo);
+}
+
+.imagem img {
+  height: auto;
+  width: auto;
+}
