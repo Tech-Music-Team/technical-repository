@@ -35,6 +35,12 @@ body {
   font-family: var(--fonte-principal);
   overflow: hidden;
 }
+
+h1 {
+  margin-top: 70px;
+}
+
+
 li {
   display: flex;
   flex-direction: row;
