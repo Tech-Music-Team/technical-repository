@@ -3,37 +3,27 @@ package school.sptech;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Log {
+class Log {
 
-    private static String timestamp() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    String data() {
         return sdf.format(new Date());
     }
 
-    public static void info(String modulo, String acao, String mensagem) {
-        System.out.println("[" + timestamp() + "] [INFO] [" + modulo + "] [" + acao + "] - " + mensagem);
+    void log(String nivel, String service, String classe, String mensagem) {
+        System.out.printf("%s %-5s [%s] [%s] - %s%n", data(), nivel, service, classe, mensagem);
     }
 
-    public static void warn(String modulo, String acao, String mensagem) {
-        System.out.println("[" + timestamp() + "] [WARN] [" + modulo + "] [" + acao + "] - " + mensagem);
+    void info(String service, String classe, String mensagem) {
+        log("INFO", service, classe, mensagem);
     }
 
-    public static void error(String modulo, String acao, String mensagem) {
-        System.out.println("[" + timestamp() + "] [ERROR] [" + modulo + "] [" + acao + "] - " + mensagem);
+    void warn(String service, String classe, String mensagem) {
+        log("WARN", service, classe, mensagem);
     }
 
-    public static void log(String nivel, String modulo, String acao, String mensagem) {
-        System.out.printf("[%s] %-5s | %-12s | %-10s | %s%n",
-                timestamp(),
-                nivel,
-                modulo,
-                acao,
-                mensagem);
+    void error(String service, String classe, String mensagem) {
+        log("ERROR", service, classe, mensagem);
     }
-
-    public static void exception(String modulo, String acao, Exception e) {
-        System.out.println("[" + timestamp() + "] [ERROR] [" + modulo + "] [" + acao + "] - Exceção: " + e.getMessage());
-    }
-
-
 }
