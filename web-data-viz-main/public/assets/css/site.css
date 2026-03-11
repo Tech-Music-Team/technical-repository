@@ -47,14 +47,17 @@ nav {
     display: flex;
     gap: 100px;
     padding-right: 5%;
+    align-items: center;
 }
 
 .menus_ind{
     transition: transform 0.3s ease-in-out;
     display: block;
+    /* font-weight: bold; */
+    font-size: 20px;
 }
 .menus_ind:hover{
-    transform: scale(1.3);
+    transform: scale(1.05);
     color: var(--rosa);
 }
 
@@ -69,17 +72,32 @@ a{
 }
 
 .menus #botao{
+    align-items: center;
+    /* pad:  5px  0; */
     display: flex;
-    background-color: #fff;
-    color: var(--preto);
-    border-radius: 30px;
-    height: 20px;
-    padding: 0px 7px 0px 7px;
-    font-weight: 800;
+    /* background-color: #fff; */
+    /* color: var(--rosa); */
+    /* color: white; */
+    /* font-weight: bold; */
+    font-size: 20px;
+    /* border-radius: 30px;  */
+    /* height: 20px; */
+    padding: 0px 15px;
+    /* font-weight: 800; */
+    background-color: var(--rosa);
+    transition: 0.3s ease-in;
+    border: none ;
+    border-radius: 15px;
+    a{
+        margin: 3px 0;
+    }
+
 }
 .menus #botao:hover {
-    transform: scale(1.3);
-    color: var(--rosa);
+    transform: scale(1.05);
+    color: var(--preto);
+    background-color: var(--roxo);
+
 }
 
 
@@ -291,7 +309,7 @@ a{
 .nome_email input{
     background-color: white;
     border-radius: 5px;
-    border-color: #A939CF;
+    border: solid #A939CF;
     width: 500px;
     padding: 15px;
     margin: 5px;
@@ -308,7 +326,7 @@ a{
 .telefone_segmento input{
     background-color: white;
     border-radius: 5px;
-    border-color: #A939CF;
+    border: solid #A939CF;
     width: 500px;
     padding: 15px;
     margin: 5px;
@@ -321,7 +339,7 @@ a{
 .ajudar textarea {
     background-color: white;
     border-radius: 5px;
-    border-color: #A939CF;
+    border: solid #A939CF;
     width: 1070px;
     padding: 70px;
     margin: 5px;
@@ -331,7 +349,7 @@ a{
 }
 .botao_enviar{
     width: 100%;
-    border-color: #A939CF;
+    border: solid #A939CF;
     border-radius: 5px;
     background-color: white;
     padding: 10px;

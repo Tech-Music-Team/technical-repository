@@ -208,3 +208,13 @@ h1 {
     width: 100%;
   }
 }
+
+.logo{
+  display: none;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
