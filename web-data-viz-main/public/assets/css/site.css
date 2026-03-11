@@ -294,6 +294,7 @@ a{
     border-color: #A939CF;
     width: 500px;
     padding: 15px;
+    margin: 5px;
 }
 .nome_email input::placeholder{
     font-family: var(--fonte-principal);
@@ -310,24 +311,30 @@ a{
     border-color: #A939CF;
     width: 500px;
     padding: 15px;
+    margin: 5px;
 }
 
 .telefone_segmento input::placeholder{
     font-family: var(--fonte-principal);
 }
 
-.ajudar input{
+.ajudar textarea {
     background-color: white;
     border-radius: 5px;
     border-color: #A939CF;
     width: 1070px;
-    padding:70px;
+    padding: 70px;
+    margin: 5px;
 }
-.ajudar input::placeholder{
+.ajudar textarea:placeholder{
     font-family: var(--fonte-principal);
 }
 .botao_enviar{
-    width: 200px;
+    width: 100%;
+    border-color: #A939CF;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
 }
 
 /*Desenvolvedores*/
@@ -563,15 +570,21 @@ a{
         width: 80%;
         gap: 0;
     }
-    .contato input {
+    .nome_email input, .telefone_segmento input {
+        width: 100%;
+    }
+    .contato textarea {
         margin: 10px;
         width: 80%;
     }
-    .contato .ajudar input {
+    .contato .ajudar textarea {
         padding: 10px;
-        margin: 5px 150px 0 0;
-        width: 89%;
+        margin: 0 150px 5px 0;
+        width: 90%;
         height: 100px;
+    }
+    .botao_enviar {
+        width: 95%;
     }
 
     .desenvolvedor {

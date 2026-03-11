@@ -100,22 +100,30 @@
         </section>
 
         <section id="contato" class="contato">
-            <div class="titulo_contato">Vamos <a style="color: #A939CF;">conversar?</a>
+            <div class="titulo_contato">
+                Vamos <a style="color: #A939CF;">conversar?</a>
             </div>
-            <div class="nome_email">
-                <input class="nome" type="text" placeholder="Nome" id="nome">
-                <input class="email" type="text" placeholder="E-mail" id="email">
-            </div>
-            <div class="telefone_segmento">
-                <input class="telefone" type="text" placeholder="Telefone" id="telefone">
-                <input class="segmento" type="text" placeholder="Segmento" id="segmento">
-            </div>
-            <div class="ajudar">
-                <input type="text" placeholder="Como podemos ajudar?">
-            </div>
-            <div class="enviar" id="dev">
-                <a href=""class="botao_enviar"></a> 
-            </div>
+            <form action="https://formsubmit.co/giovanna.deoliveira@gmail.com" method="POST">
+                <div class="nome_email">
+                    <input class="nome" type="text" name="nome" placeholder="Nome" required>
+
+                    <input class="email" type="email" name="email" placeholder="E-mail" required>
+                </div>
+
+                <div class="telefone_segmento">
+                    <input class="telefone" type="text" name="telefone" placeholder="Telefone">
+
+                    <input class="segmento" type="text" name="segmento" placeholder="Segmento">
+                </div>
+
+                <div class="ajudar">
+                    <textarea name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+                </div>
+
+                <div class="enviar">
+                    <button type="submit" class="botao_enviar">Enviar</button>
+                </div>
+            </form>
         </section>
 
         <section class="desenvolvedor">
