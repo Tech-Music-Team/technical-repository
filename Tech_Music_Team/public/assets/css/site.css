@@ -46,14 +46,18 @@ nav {
 .menus{
     display: flex;
     gap: 100px;
+    padding-right: 5%;
+    align-items: center;
 }
 
 .menus_ind{
     transition: transform 0.3s ease-in-out;
     display: block;
+    /* font-weight: bold; */
+    font-size: 20px;
 }
 .menus_ind:hover{
-    transform: scale(1.3);
+    transform: scale(1.05);
     color: var(--rosa);
 }
 
@@ -66,41 +70,36 @@ a{
     color: white;
     list-style-type: none;
 }
-.botao .cad{
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    justify-content: center;
+
+.menus #botao{
     align-items: center;
-    margin-top: 8px;
-
-}
-.botao .cad:hover{
-    transform: scale(1.3);
-    color: var(--rosa);
-}
-
-.botao{
+    /* pad:  5px  0; */
     display: flex;
-    gap: 30px;
+    /* background-color: #fff; */
+    /* color: var(--rosa); */
+    /* color: white; */
+    /* font-weight: bold; */
+    font-size: 20px;
+    /* border-radius: 30px;  */
+    /* height: 20px; */
+    padding: 0px 15px;
+    /* font-weight: 800; */
+    background-color: var(--rosa);
+    transition: 0.3s ease-in;
+    border: none ;
+    border-radius: 15px;
+    a{
+        margin: 3px 0;
+    }
+
+}
+.menus #botao:hover {
+    transform: scale(1.05);
+    color: var(--preto);
+    background-color: var(--roxo);
+
 }
 
-.botao .login{
-    background-image: url(../image/Botão_Login.png);
-    transition: transform 0.3s ease-in-out;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: block;
-    background-color: transparent;
-    width: 125px;
-    height: 40px;
-    margin-left: 5px;
-    margin-right: 30px;
-}
-.botao .login:hover{
-    transform: scale(1.15);
-    background-image: url(../image/Botão_Login_frame.png);
-}
 
 /*Banner*/
 .banner{
@@ -310,9 +309,10 @@ a{
 .nome_email input{
     background-color: white;
     border-radius: 5px;
-    border-color: #A939CF;
+    border: solid #A939CF;
     width: 500px;
     padding: 15px;
+    margin: 5px;
 }
 .nome_email input::placeholder{
     font-family: var(--fonte-principal);
@@ -326,26 +326,29 @@ a{
 .telefone_segmento input{
     background-color: white;
     border-radius: 5px;
-    border-color: #A939CF;
+    border: solid #A939CF;
     width: 500px;
     padding: 15px;
+    margin: 5px;
 }
 
 .telefone_segmento input::placeholder{
     font-family: var(--fonte-principal);
 }
 
-.ajudar input{
+.ajudar textarea {
     background-color: white;
     border-radius: 5px;
-    border-color: #A939CF;
+    border: solid #A939CF;
     width: 1070px;
-    padding:70px;
+    padding: 70px;
+    margin: 5px;
 }
-.ajudar input::placeholder{
+.ajudar textarea:placeholder{
     font-family: var(--fonte-principal);
 }
 .botao_enviar{
+<<<<<<< HEAD:Tech_Music_Team/public/assets/css/site.css
     background-color: var(--roxo);
     border-radius: 5px;
     border-color: none;
@@ -358,6 +361,13 @@ a{
 .enviar .botao_enviar:hover{
     background-color: var(--rosa);
     transform: scale(1.19);
+=======
+    width: 100%;
+    border: solid #A939CF;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+>>>>>>> aa79dbf8e8facc84e69a7cd0fcfd3ab3ef270158:web-data-viz-main/public/assets/css/site.css
 }
 
 /*Desenvolvedores*/
@@ -459,4 +469,229 @@ a{
 }
 .indice_texto a:hover{
     transform: scale(1.10);
+<<<<<<< HEAD:Tech_Music_Team/public/assets/css/site.css
+=======
+}
+
+
+.mobile_menu {
+    cursor: pointer;
+    display: none;
+}
+
+.mobile_menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+.desenvolvedor .linhas .linha2_devMobile {
+    display: none;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .menus, .botao {
+        position: absolute;
+        top: 50px;
+        padding-top: 30px;
+        right: 0;
+        width: 50%;
+        height: 900px;
+        background: var(--preto);
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .menus li, .botao li {
+        opacity: 0;
+    }
+    .mobile_menu {
+        display: block;
+        margin-right: 10%;
+    }
+
+    .banner {
+        margin-top: 100px;
+        display: flex;
+    }
+    .banner img {
+        left: 0;
+        width: 40%;
+        margin: 0;
+    }
+    .banner_titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: -60px;
+        width: 80%;
+    }
+    .banner .textos {
+        margin-left: 25%;
+    }
+    .banner .botao_vamos{
+        width: 75%;
+    }
+    .banner .transicao {
+        margin-top: 330px;
+    }
+    .banner .transicao .linha1, .linha2 {
+        display: none;
+    }
+
+    .sobre {
+        margin-top: 60px;
+        height: 360px;
+    }
+    .sobre h1 {
+        font-size: 250%;
+        font-weight: 500;
+        width: 90%;
+    }
+    .sobre h3 {
+        font-size: 120%;
+        margin: 5%;
+    }
+
+    .carrosell_letras {
+        margin-top: 50px;
+    }
+    .carrosell_pista h2 {
+        font-size: 30px;
+    }
+
+    .atuacao {
+        margin-top: 70px;
+    }
+    .atuacao .instrumentos {
+        display: none;
+    }
+    .atuacao .texto_atuacao h1 {
+        font-size: 250%;
+        font-weight: 500;
+    }
+    .atuacao .texto_atuacao h3 {
+        font-size: 110%;
+        margin: 30px;
+    }
+    .atuacao img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .contato {
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        gap: 0;
+    }
+    .contato .titulo_contato {
+        font-size: 250%;
+        font-weight: 500;
+        margin-bottom: 30px;
+        width: 80%;
+    }
+    .contato .nome_email, .telefone_segmento {
+        flex-direction: column;
+        width: 80%;
+        gap: 0;
+    }
+    .nome_email input, .telefone_segmento input {
+        width: 100%;
+    }
+    .contato textarea {
+        margin: 10px;
+        width: 80%;
+    }
+    .contato .ajudar textarea {
+        padding: 10px;
+        margin: 0 150px 5px 0;
+        width: 90%;
+        height: 100px;
+    }
+    .botao_enviar {
+        width: 95%;
+    }
+
+    .desenvolvedor {
+        margin-top: 30px;
+    }
+    .desenvolvedor .titulo_desenvolvedor h1 {
+        font-size: 200%;
+        font-weight: 500;
+        width: 80%;
+    }
+    .desenvolvedor .linhas {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .desenvolvedor .linhas .linha2_dev {
+        display: none;
+    }
+    .desenvolvedor .linhas .linha2_devMobile {
+        display: block;
+    }
+    
+    .footer {
+        height: 100%;
+        padding: 20px;
+        flex-direction: column;
+        margin: 0;
+    }
+    .footer .footer_logo {
+        display: none;
+    }
+    .footer .indice {
+        flex-direction: column;
+        gap: 0;
+    }
+    .footer .indice .indice_texto {
+        gap: 0;
+    }
+    .footer .indice .indice_texto a {
+        margin: 5px;
+    }
+    .footer .indice .indice_texto h2 {
+        margin: 20px 0 0 0;
+        font-size: 30px;
+    }
+    .footer .indice .indice_texto h3 {
+        margin: 5px;
+    }
+}
+
+.menus.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.mobile_menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile_menu.active .line2 {
+    opacity: 0;
+}
+.mobile_menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+>>>>>>> aa79dbf8e8facc84e69a7cd0fcfd3ab3ef270158:web-data-viz-main/public/assets/css/site.css
 }
