@@ -1,15 +1,15 @@
 /*Fonte tipográfica*/
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /*Paleta de cores*/
-:root{
-    --branco: white;     
-    --roxo: #A939CF ;     
-    --rosa: #D421BF ;     
-    --preto: black;
+:root {
+  --branco: white;
+  --roxo: #a939cf;
+  --rosa: #d421bf;
+  --preto: black;
 
-    --fonte-principal: 'Montserrat', sans-serif;
-    --fonte-destaque: 'Exo 2', sans-serif;
+  --fonte-principal: "Montserrat", sans-serif;
+  --fonte-destaque: "Exo 2", sans-serif;
 }
 .login {
   margin-left: 5%;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
 }
-.login h1{
+.login h1 {
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -48,13 +48,13 @@ h1 {
   max-height: 650px;
 }
 
-.logo-principal{
+.logo-principal {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo-principal img{
+.logo-principal img {
   width: 160px;
   height: auto;
 }
@@ -63,13 +63,13 @@ h1 {
   flex-direction: column;
   gap: 10px;
 }
-.conteudo-login h1{
+.conteudo-login h1 {
   color: var(--rosa);
 }
 .conteudo-login div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  /* gap: 10px; */
 }
 .conteudo-login div p {
   font-weight: 400;
@@ -80,7 +80,7 @@ h1 {
   margin-bottom: 1.5rem;
 }
 .conteudo-login .input-group:focus-within i {
-  color:var(--rosa);
+  color: var(--rosa);
 }
 .conteudo-login .input-group input {
   width: 450px;
@@ -114,7 +114,7 @@ h1 {
   height: 50px;
   border-radius: 10px;
   border: none;
-  background-color:var(--roxo);
+  background-color: var(--roxo);
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -136,8 +136,8 @@ h1 {
 }
 
 .logo {
-    display: none;
-  }
+  display: none;
+}
 
 /* RESPONSIVIDADE */
 @media (max-width: 600px) {
@@ -203,7 +203,6 @@ h1 {
     margin: 15px 10px 10px 0;
   }
 
-
   .imagem {
     display: none;
   }
@@ -213,18 +212,21 @@ h1 {
   .logo {
     display: block;
     width: 100%;
-    background: linear-gradient(rgba(128, 0, 255, 0.001), rgba(128, 0, 255, 0.632));
+    background: linear-gradient(
+      rgba(128, 0, 255, 0.001),
+      rgba(128, 0, 255, 0.632)
+    );
   }
   .logo img {
     width: 100%;
   }
 }
 
-.logo{
+.logo {
   display: none;
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: space-between;
   flex-direction: row;

@@ -6,9 +6,9 @@ USE tech_music;
 CREATE TABLE artista (
     id_artista INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    views INT DEFAULT 0,
+    views BIGINT DEFAULT 0,
     artist_popularity INT,
-    likes INT DEFAULT 0,
+    likes BIGINT DEFAULT 0,
     artist_genre VARCHAR(100)
 );
 
@@ -19,12 +19,12 @@ CREATE TABLE musica (
     id_track VARCHAR(100) UNIQUE,
     fk_artista INT NOT NULL,
 
-    streams INT,
+    streams BIGINT,
     title VARCHAR(100),      -- nome no YouTube
     track VARCHAR(100),      -- nome no Spotify
-    views INT DEFAULT 0,
-    likes INT DEFAULT 0,
-    comments INT DEFAULT 0,
+    views BIGINT DEFAULT 0,
+    likes BIGINT DEFAULT 0,
+    comments BIGINT DEFAULT 0,
 
     -- FEATURES DE ÁUDIO (0 até 1)
     danceability DECIMAL(3,2),
@@ -118,6 +118,37 @@ CREATE TABLE playlist (
 		PRIMARY KEY (id_playlist, fk_usuario)
 );
 
+-- TABELA PLAYLIST (FRACA)
+CREATE TABLE setlist (
+    id_setlist INT AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    fk_usuario INT NOT NULL,
+    
+    CONSTRAINT fk_setlist_usuario
+		FOREIGN KEY (fk_usuario)
+        REFERENCES usuario (id_usuario)
+        ON DELETE CASCADE,
+        
+    CONSTRAINT pkComposta_setlist 
+		PRIMARY KEY (id_setlist , fk_usuario)
+);
+
+-- TABELA ASSOCIATIVA
+CREATE TABLE artista_setlist(
+	fk_artista INT NOT NULL,
+    fk_setlist INT NOT NULL,
+    
+    CONSTRAINT pkComposta_as PRIMARY KEY (fk_artista, fk_setlist),
+    
+     CONSTRAINT fk_as_artista
+        FOREIGN KEY (fk_artista)
+        REFERENCES artista(id_artista),
+
+    CONSTRAINT fk_as_setlist
+        FOREIGN KEY (fk_setlist)
+        REFERENCES setlist(id_setlist)
+);
+
 -- TABELA ASSOCIATIVA
 CREATE TABLE musica_playlist (
     fk_musica INT NOT NULL,
@@ -133,5 +164,4 @@ CREATE TABLE musica_playlist (
         FOREIGN KEY (fk_playlist)
         REFERENCES playlist(id_playlist)
 );
-
 
