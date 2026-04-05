@@ -1,3 +1,5 @@
+
+DROP DATABASE tech_music;
 CREATE DATABASE tech_music;
 USE tech_music;
 -- DROP DATABASE tech_music;
