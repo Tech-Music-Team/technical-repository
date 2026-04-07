@@ -20,6 +20,7 @@
     overflow: hidden;
 }
 
+
 .left-column {
     width: 260px;
     background:linear-gradient(to bottom, #1A0A2E 0%, #210B3C 100%);
@@ -68,29 +69,53 @@
 
 .user-footer {
     margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    padding: 20px 10px 10px 10px;
+    width: 100%;
 }
 
 .user-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    background: linear-gradient(to right, #4A227D, #873DE3);  
+    padding: 6px 12px;
+    border-radius: 50px;
+    width: fit-content;
+    max-width: 100%; 
+    transition: background 0.3s ease;
 }
 
-.material-symbols-outlined.profile-icon {
-    font-size: 32px;
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    background-color: #B585E8; /* Fundo reserva caso a foto falhe */
+    flex-shrink: 0;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
 }
 
 .user-name {
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 12px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .user-role {
-    font-size: 12px;
-    color: #b3b3b3;
+    font-size: 10px;
+    color: #E9D5FF; 
+    white-space: nowrap;
 }
+
 
 .menu-header {
     font-size: 12px;
@@ -109,12 +134,13 @@
 
 }
 .top-header {
+    font-family: 'Montserrat Alternates', sans-serif !important; 
     display: flex;
     align-items: center;
     justify-content: flex-start;
     align-content: space-between;
     gap: 35px;
-    padding: 20px 40px;
+    padding: 20px 40px 20px 100px;
     background-color: white;
     border-bottom: 1px solid #eee;
 }
@@ -123,7 +149,7 @@
     font-size: 24px;
     font-weight: 700px;
     color: #1A0A2E;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
 .search-container {
@@ -204,3 +230,142 @@
 .top-header .material-symbols-outlined {
     font-size: 20px;
 }
+
+.ranking-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    padding: 30px 40px;
+    background-color: #f8f9fa;
+}
+
+.card {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 15px;
+    padding: 12px 30px;
+    background-color: white;
+    border: 1.5px solid #e0d5f2;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.card:hover {
+    border-color: #A855F7;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.1);
+}
+
+.left-content-group {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto; 
+    gap: 15px;
+}
+
+.ranking-number {
+    font-size: 32px;
+    font-weight: 300;
+    color: #D4A574;
+    min-width: 50px;
+    text-align: left;
+}
+
+.card img {
+    width: 65px;
+    height: 65px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.artist-info-header {
+    display: flex;
+    flex-grow: 1; 
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 6px;
+    width: 150px
+}
+ 
+.artist-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1A0A2E;
+}
+ 
+.genre {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.card ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    margin-right: 20px; 
+
+}
+ 
+.card li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background-color: transparent; 
+    min-width: auto;
+    padding: 0;
+}
+ 
+.artist-atribute {
+    font-size: 9px;
+    color: #A855F7;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid #A855F7;
+    padding-bottom: 2px;
+}
+ 
+.atribute-value {
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    background-color: #A855F7;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 2px;
+}
+
+.right-content-group {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.details-button {
+    padding: 8px 18px;
+    background-color: white;
+    border: 1.5px solid #A855F7;
+    border-radius: 25px;
+    margin-left: auto;
+    color: #A855F7;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+ 
+.details-button:hover {
+    background-color: #A855F7;
+    color: white;
+}
+
