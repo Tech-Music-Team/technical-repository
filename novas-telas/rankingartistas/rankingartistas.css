@@ -270,7 +270,7 @@
 .ranking-number {
     font-size: 32px;
     font-weight: 300;
-    color: #D4A574;
+    /* color: #D4A574; */
     min-width: 50px;
     text-align: left;
 }
