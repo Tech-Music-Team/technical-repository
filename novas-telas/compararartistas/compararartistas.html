@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Artistas - TechMusic </title>
+
+    <link rel="stylesheet" href="compararartistas.css">
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- COLUNA ESQUERDA -->
+    <div class="container">
+        <aside class="left-column">
+            <h2 class="logo-tipo">Tech Music</h2>
+            <hr class="divisor" />
+
+            <nav class="menu-nav">
+                <ul class="menu-group">
+                    <li class="menu-header">Artistas</li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">person</span>
+                            Lista artistas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">analytics</span>
+                            Analisar artista
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <span class="material-symbols-outlined">compare_arrows</span>
+                            Comparar artistas
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="menu-group">
+                    <li class="menu-header">Músicas</li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">library_music</span>
+                            Lista músicas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">equalizer</span>
+                            Analisar música
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">rule</span>
+                            Comparar músicas
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="menu-group">
+                    <li class="menu-header">Pessoal</li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">queue_music</span>
+                            Minhas setlist
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">featured_play_list</span>
+                            Minhas playlists
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-footer">
+                <div class="user-info">
+                    <img
+                        src="Assets/perfil.png"
+                        alt="Foto de perfil"
+                        class="profile-img"
+                    />
+                    <div class="user-text">
+                        <p class="user-name">Jorge Luiz</p>
+                        <p class="user-role">Organizador de eventos</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- HEADER  -->
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Comparar artistas</h1>
+            </header>
+
+            <!-- ARTISTA 1  -->
+            <div class="profile-card">
+
+                <div class="full-artist-info">
+                    <div class="bloquinho">
+                        <div class="artist-photo-block">
+                            <img src="../Assets/michael.png" alt="artista 1" class="artist-photo" />
+                        </div>
+
+                        <div class="artist-info">
+                            <span class="artist-name-big">
+                                Michael <br> Jackson
+                            </span>
+
+                            <ul class="stats-grid">
+                                <li class="stat-item">
+                                    <span class="stat-label">Gênero</span>
+                                    <span class="stat-value">Pop</span>
+                                </li>
+                                <li class="stat-item">
+                                    <span class="stat-label">Popularidade</span>
+                                    <span class="stat-value">99</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="btn-setlist">
+                        <span class="material-symbols-outlined">playlist_add</span>
+                        Adicionar a setlist
+                    </button>
+                </div>
+
+                <!-- ARTISTA 2 -->
+                <div class="full-artist-info">
+                    <div class="bloquinho">
+                        <div class="artist-photo-block">
+                            <img src="../Assets/lisa.png" alt="artista 2" class="artist-photo" />
+                        </div>
+
+                        <div class="artist-info">
+                            <span class="artist-name-big">Lisa</span>
+
+                            <ul class="stats-grid">
+                                <li class="stat-item">
+                                    <span class="stat-label">Gênero</span>
+                                    <span class="stat-value">K-Pop</span>
+                                </li>
+                                <li class="stat-item">
+                                    <span class="stat-label">Popularidade</span>
+                                    <span class="stat-value">89</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="btn-setlist">
+                        <span class="material-symbols-outlined">playlist_add</span>
+                        Adicionar a setlist
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- TOGGLER  -->
+            <div class="ranking-controls">
+              <div class="tab-toggle">
+                <button class="tab-btn">Áudio</button>
+                <button class="tab-btn active">Engajamento</button>
+              </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
