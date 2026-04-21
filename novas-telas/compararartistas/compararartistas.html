@@ -181,6 +181,177 @@
                 <button class="tab-btn active">Engajamento</button>
               </div>
             </div>
+
+            <!-- QUADRO DE COMPARAÇÃO  -->
+<div class="cards-row"> 
+
+<div class="card">
+
+  <div class="card-header">
+    <div class="artist">
+      <span class="dot"></span>
+      Michael Jackson
+    </div>
+    <div class="listener">
+      Lisa
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">81</span>
+      <span class="badge up"><span class="arrow">↑</span>+9.5%</span>
+    </div>
+    <div class="center">
+      <div class="label">Dançabilidade</div>
+      <div class="delta">△ +7</div>
+    </div>
+    <div class="right">
+      <span class="value">74</span>
+      <span class="badge down"><span class="arrow">↓</span>−9.5%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">73</span>
+      <span class="badge up"><span class="arrow">↑</span>+7.4%</span>
+    </div>
+    <div class="center">
+      <div class="label">Energia</div>
+      <div class="delta">△ +5</div>
+    </div>
+    <div class="right">
+      <span class="value">68</span>
+      <span class="badge down"><span class="arrow">↓</span>−7.4%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">−7.1</span>
+      <span class="badge down"><span class="arrow">↓</span>−24%</span>
+    </div>
+    <div class="center">
+      <div class="label">Loudness</div>
+      <div class="delta">△ −1.7dB</div>
+    </div>
+    <div class="right">
+      <span class="value">−5.4</span>
+      <span class="badge up"><span class="arrow">↑</span>+24%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">0.12</span>
+      <span class="badge up"><span class="arrow">↑</span>+50%</span>
+    </div>
+    <div class="center">
+      <div class="label">Speechiness</div>
+      <div class="delta">△ +0.04</div>
+    </div>
+    <div class="right">
+      <span class="value">0.08</span>
+      <span class="badge down"><span class="arrow">↓</span>−50%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">0.04</span>
+      <span class="badge down"><span class="arrow">↓</span>−78%</span>
+    </div>
+    <div class="center">
+      <div class="label">Instrumental.</div>
+      <div class="delta">△ −0.14</div>
+    </div>
+    <div class="right">
+      <span class="value">0.18</span>
+      <span class="badge up"><span class="arrow">↑</span>+78%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">0.31</span>
+      <span class="badge down"><span class="arrow">↓</span>−37%</span>
+    </div>
+    <div class="center">
+      <div class="label">Valence</div>
+      <div class="delta">△ −0.18</div>
+    </div>
+    <div class="right">
+      <span class="value">0.49</span>
+      <span class="badge up"><span class="arrow">↑</span>+37%</span>
+    </div>
+  </div>
+
+</div>      
+
+<!-- RADAR DE ÁUDIO -->
+<div class="radar-card">
+  <div class="radar-card-header">
+    <span class="radar-card-title">Radar de Áudio</span>
+    <div class="radar-legend">
+      <span class="legend-item">
+        <span class="legend-line dark"></span>
+        Michael Jackson
+      </span>
+      <span class="legend-item">
+        <span class="legend-line light"></span>
+        Lisa
+      </span>
+    </div>
+  </div>
+
+  <canvas id="radarChart"></canvas>
+  </div>
+</div>
+
+<script>
+  const ctx2 = document.getElementById('radarChart').getContext('2d');
+  new Chart(ctx2, {
+    type: 'radar',
+    data: {
+      labels: ['Energia', 'Dançab.', 'Loudness', 'Speech.', 'Instrum.', 'Valence'],
+      datasets: [
+        {
+          label: 'Michael Jackson',
+          data: [73, 81, -7.1, 12, 4, 31],
+          borderColor: '#1A0A2E',
+          backgroundColor: 'rgba(59, 31, 168, 0.15)',
+          borderWidth: 2,
+          pointRadius: 2,
+        },
+        {
+          label: 'Lisa',
+          data: [68, 74, -5.4, 8, 18, 49],
+          borderColor: '#A855F7',
+          backgroundColor: 'rgba(168, 85, 247, 0.15)',
+          borderWidth: 2,
+          pointRadius: 2,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        r: {
+          min: -10,
+          max: 100,
+          ticks: { display: false },
+          pointLabels: { font: { size: 11 }, color: '#888' },
+          grid: { color: 'rgba(168, 85, 247, 0.25)' },
+          angleLines: { color: 'rgba(168, 85, 247, 0.15)' },
+        }
+      }
+    }
+  });
+</script>
+
         </main>
     </div>
 </body>
