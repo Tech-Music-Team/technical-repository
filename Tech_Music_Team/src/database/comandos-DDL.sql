@@ -1,5 +1,4 @@
 
-DROP DATABASE tech_music;
 CREATE DATABASE tech_music;
 USE tech_music;
 -- DROP DATABASE tech_music;
@@ -19,7 +18,7 @@ CREATE TABLE musica (
     id_musica INT AUTO_INCREMENT PRIMARY KEY,
 
     id_track VARCHAR(100) UNIQUE,
-    fk_artista INT NOT NULL,
+    fk_artista INT,
 
     streams BIGINT,
     title VARCHAR(100),      -- nome no YouTube
@@ -29,43 +28,21 @@ CREATE TABLE musica (
     comments BIGINT DEFAULT 0,
 
     -- FEATURES DE ÁUDIO (0 até 1)
-    danceability DECIMAL(3,2),
-    valence DECIMAL(3,2),
-    energy DECIMAL(3,2),
-    instrumentalness DECIMAL(3,2),
-    speechiness DECIMAL(3,2),
+    danceability DECIMAL(10,5),
+    valence DECIMAL(10,5),
+    energy DECIMAL(10,5),
+    instrumentalness DECIMAL(10,5),
+    speechiness DECIMAL(10,5),
 
     -- LOUDNESS (-60 até 0 dB)
-    loudness DECIMAL(5,2),
+    loudness DECIMAL(10,5),
 
     -- Popularidade (0 até 100)
     track_popularity INT,
 
     CONSTRAINT fk_musica_artista
         FOREIGN KEY (fk_artista)
-        REFERENCES artista(id_artista),
-
-    -- RESTRIÇÕES DE DOMÍNIO
-    CONSTRAINT chk_danceability
-        CHECK (danceability BETWEEN 0 AND 1),
-
-    CONSTRAINT chk_valence
-        CHECK (valence BETWEEN 0 AND 1),
-
-    CONSTRAINT chk_energy
-        CHECK (energy BETWEEN 0 AND 1),
-
-    CONSTRAINT chk_instrumentalness
-        CHECK (instrumentalness BETWEEN 0 AND 1),
-
-    CONSTRAINT chk_speechiness
-        CHECK (speechiness BETWEEN 0 AND 1),
-
-    CONSTRAINT chk_loudness
-        CHECK (loudness BETWEEN -60 AND 0),
-
-    CONSTRAINT chk_track_popularity
-        CHECK (track_popularity BETWEEN 0 AND 100)
+        REFERENCES artista(id_artista)
 );
 
 -- TABELA DE ROLES
