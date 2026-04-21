@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparar Artistas - TechMusic </title>
+    <title>Comparar Musicas - TechMusic </title>
 
-    <link rel="stylesheet" href="compararartistas.css">
+    <link rel="stylesheet" href="compararmusicas.css">
 
     <link
         rel="stylesheet"
@@ -42,7 +42,7 @@
                             Analisar artista
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="#">
                             <span class="material-symbols-outlined">compare_arrows</span>
                             Comparar artistas
@@ -64,7 +64,7 @@
                             Analisar música
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#">
                             <span class="material-symbols-outlined">rule</span>
                             Comparar músicas
@@ -107,7 +107,7 @@
         <!-- HEADER  -->
         <main class="main-content">
             <header class="top-header">
-                <h1>Comparar artistas</h1>
+                <h1>Comparar músicas</h1>
             </header>
 
             <!-- ARTISTA 1  -->
@@ -116,30 +116,27 @@
                 <div class="full-artist-info">
                     <div class="bloquinho">
                         <div class="artist-photo-block">
-                            <img src="../Assets/michael.png" alt="artista 1" class="artist-photo" />
+                            <img src="../Assets/goosebumps.jpg" alt="artista 1" class="artist-photo" />
                         </div>
 
                         <div class="artist-info">
                             <span class="artist-name-big">
-                                Michael <br> Jackson
+                                goosebumps
                             </span>
 
                             <ul class="stats-grid">
                                 <li class="stat-item">
-                                    <span class="stat-label">Gênero</span>
-                                    <span class="stat-value">Pop</span>
+                                    <span class="stat-label">Autor(a)</span>
+                                    <span class="stat-value">Travis Scott</span>
                                 </li>
-                                <li class="stat-item">
-                                    <span class="stat-label">Popularidade</span>
-                                    <span class="stat-value">99</span>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
 
                     <button class="btn-setlist">
                         <span class="material-symbols-outlined">playlist_add</span>
-                        Adicionar a setlist
+                        Adicionar a playlist
                     </button>
                 </div>
 
@@ -147,7 +144,7 @@
                 <div class="full-artist-info">
                     <div class="bloquinho">
                         <div class="artist-photo-block">
-                            <img src="../Assets/lisa.png" alt="artista 2" class="artist-photo" />
+                            <img src="../Assets/bornagain.avif" alt="artista 2" class="artist-photo" />
                         </div>
 
                         <div class="artist-info">
@@ -155,12 +152,8 @@
 
                             <ul class="stats-grid">
                                 <li class="stat-item">
-                                    <span class="stat-label">Gênero</span>
-                                    <span class="stat-value">K-Pop</span>
-                                </li>
-                                <li class="stat-item">
-                                    <span class="stat-label">Popularidade</span>
-                                    <span class="stat-value">89</span>
+                                    <span class="stat-label">Autor(a)</span>
+                                    <span class="stat-value">Lisa</span>
                                 </li>
                             </ul>
                         </div>
@@ -168,7 +161,7 @@
 
                     <button class="btn-setlist">
                         <span class="material-symbols-outlined">playlist_add</span>
-                        Adicionar a setlist
+                        Adicionar a playlist
                     </button>
                 </div>
 
@@ -190,10 +183,10 @@
   <div class="card-header">
     <div class="artist">
       <span class="dot"></span>
-      Michael Jackson
+      goosebumps
     </div>
     <div class="listener">
-      Lisa
+      Born Again
       <span class="dot"></span>
     </div>
   </div>
@@ -290,112 +283,67 @@
 
 </div>      
 
-<!-- TABELINHAS -->
-<div class="engagement-grid">
-
-  <div class="eng-card">
-    <div class="eng-card-top">
-      <div>
-        <span class="eng-title">Engajamento Real</span>
-        <span class="eng-formula">(Likes+Comments)÷Views×100</span>
-      </div>
+<!-- RADAR DE ÁUDIO -->
+<div class="radar-card">
+  <div class="radar-card-header">
+    <span class="radar-card-title">Radar de Áudio</span>
+    <div class="radar-legend">
+      <span class="legend-item">
+        <span class="legend-line dark"></span>
+        goosebumps
+      </span>
+      <span class="legend-item">
+        <span class="legend-line light"></span>
+        Born Again
+      </span>
     </div>
-    <p class="eng-desc">% que interagiu ativamente com o conteúdo — além da escuta passiva</p>
-    <div class="eng-row">
-      <span class="eng-dot dark"></span>
-      <span class="eng-name">Michael Jackson</span>
-      <span class="eng-badge up">↑</span>
-      <span class="eng-value">4.35%</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 80%"></div></div>
-    <div class="eng-row">
-      <span class="eng-dot light"></span>
-      <span class="eng-name">Lisa</span>
-      <span class="eng-badge down">↓</span>
-      <span class="eng-value">3.36%</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar light" style="width: 62%"></div></div>
-    <span class="eng-delta">△ +0.99pp</span>
   </div>
 
-  <div class="eng-card">
-    <div class="eng-card-top">
-      <div>
-        <span class="eng-title">Conversão</span>
-        <span class="eng-formula">Likes ÷ Streams × 100</span>
-      </div>
-    </div>
-    <p class="eng-desc">de quem ouviu, quantos curtiram — fidelidade do ouvinte</p>
-    <div class="eng-row">
-      <span class="eng-dot dark"></span>
-      <span class="eng-name">Michael Jackson</span>
-      <span class="eng-badge neutral">=</span>
-      <span class="eng-value">0.34%</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 75%"></div></div>
-    <div class="eng-row">
-      <span class="eng-dot light"></span>
-      <span class="eng-name">Lisa</span>
-      <span class="eng-badge neutral">=</span>
-      <span class="eng-value">0.33%</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar light" style="width: 73%"></div></div>
-    <span class="eng-delta">△ ≈igual</span>
+  <canvas id="radarChart"></canvas>
   </div>
-
-  <div class="eng-card">
-    <div class="eng-card-top">
-      <div>
-        <span class="eng-title">Retenção</span>
-        <span class="eng-formula">Streams ÷ Views (×)</span>
-      </div>
-    </div>
-    <p class="eng-desc">quem viu o clipe voltou a ouvir — conversão clipe→streaming</p>
-    <div class="eng-row">
-      <span class="eng-dot dark"></span>
-      <span class="eng-name">Michael Jackson</span>
-      <span class="eng-badge neutral">=</span>
-      <span class="eng-value">11.8×</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 70%"></div></div>
-    <div class="eng-row">
-      <span class="eng-dot light"></span>
-      <span class="eng-name">Lisa</span>
-      <span class="eng-badge neutral">=</span>
-      <span class="eng-value">11.8×</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar light" style="width: 70%"></div></div>
-    <span class="eng-delta">△ idêntico</span>
-  </div>
-
-  <div class="eng-card">
-    <div class="eng-card-top">
-      <div>
-        <span class="eng-title">Buzz</span>
-        <span class="eng-formula">Comments ÷ Streams × 100</span>
-      </div>
-    </div>
-    <p class="eng-desc">proporção que comentou — capacidade de gerar conversa</p>
-    <div class="eng-row">
-      <span class="eng-dot dark"></span>
-      <span class="eng-name">Michael Jackson</span>
-      <span class="eng-badge up">↑</span>
-      <span class="eng-value">0.024%</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 78%"></div></div>
-    <div class="eng-row">
-      <span class="eng-dot light"></span>
-      <span class="eng-name">Lisa</span>
-      <span class="eng-badge down">↓</span>
-      <span class="eng-value">0.021%</span>
-    </div>
-    <div class="eng-bar-track"><div class="eng-bar light" style="width: 68%"></div></div>
-    <span class="eng-delta">△ +0.003pp</span>
-  </div>
-
-</div>
 </div>
 
+<script>
+  const ctx2 = document.getElementById('radarChart').getContext('2d');
+  new Chart(ctx2, {
+    type: 'radar',
+    data: {
+      labels: ['Energia', 'Dançab.', 'Loudness', 'Speech.', 'Instrum.', 'Valence'],
+      datasets: [
+        {
+          label: 'Michael Jackson',
+          data: [73, 81, -7.1, 12, 4, 31],
+          borderColor: '#1A0A2E',
+          backgroundColor: 'rgba(59, 31, 168, 0.15)',
+          borderWidth: 2,
+          pointRadius: 2,
+        },
+        {
+          label: 'Lisa',
+          data: [68, 74, -5.4, 8, 18, 49],
+          borderColor: '#A855F7',
+          backgroundColor: 'rgba(168, 85, 247, 0.15)',
+          borderWidth: 2,
+          pointRadius: 2,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        r: {
+          min: -10,
+          max: 100,
+          ticks: { display: false },
+          pointLabels: { font: { size: 11 }, color: '#888' },
+          grid: { color: 'rgba(168, 85, 247, 0.25)' },
+          angleLines: { color: 'rgba(168, 85, 247, 0.15)' },
+        }
+      }
+    }
+  });
+</script>
 
         </main>
     </div>
