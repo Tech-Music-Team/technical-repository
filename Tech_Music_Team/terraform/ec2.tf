@@ -28,7 +28,7 @@ resource "aws_instance" "server_prod" {
   cd /home/ubuntu
   git clone https://github.com/Tech-Music-Team/technical-repository.git
   cd technical-repository/Tech_Music_Team
-  /usr/local/bin/docker-compose up --build -d
+  docker-compose up --build -d
 EOF
 
   tags = {
@@ -94,4 +94,8 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tcp" {
   from_port   = 3333
   ip_protocol = "tcp"
   to_port     = 3333
+}
+
+output "ip_publico" {
+  value = aws_instance.server_prod.public_ip
 }

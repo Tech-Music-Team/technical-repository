@@ -4,3 +4,9 @@ package-lock.json
 .env
 .env.dev
 .github
+/terraform/.terraform
+/terraform/.terraform.lock.hcl
+/terraform terraform.tfstate
+/terraform terraform.tfstate.backup
+/terraform .terraformrc
+/terraform .terraformignore
