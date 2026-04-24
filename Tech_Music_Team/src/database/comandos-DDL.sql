@@ -1,15 +1,14 @@
-
+DROP DATABASE IF EXISTS tech_music;
 CREATE DATABASE tech_music;
 USE tech_music;
--- DROP DATABASE tech_music;
 
--- TABELA ARTISTA
 CREATE TABLE artista (
     id_artista INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     views BIGINT DEFAULT 0,
     artist_popularity INT,
     likes BIGINT DEFAULT 0,
+    artist_followers BIGINT DEFAULT 0,
     artist_genre VARCHAR(100)
 );
 
@@ -67,14 +66,14 @@ CREATE TABLE usuario (
 -- TABELA LOG
 CREATE TABLE log (
     id_log INT AUTO_INCREMENT PRIMARY KEY,
-    fk_usuario INT NULL,
+    fk_usuario INT,
 
     data_hora DATETIME NOT NULL,
     nivel VARCHAR(50),
     aplicacao VARCHAR(100),
     modulo VARCHAR(100),
     classe VARCHAR(100),
-    mensagem VARCHAR(255),
+    mensagem VARCHAR(500),
 
     CONSTRAINT fk_log_usuario
         FOREIGN KEY (fk_usuario)

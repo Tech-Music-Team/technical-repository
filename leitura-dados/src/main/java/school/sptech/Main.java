@@ -1,5 +1,6 @@
 package school.sptech;
 
+import school.sptech.client.S3Provider;
 import school.sptech.entities.Musica;
 import school.sptech.entities.Artista;
 import school.sptech.entities.Logger;
@@ -7,25 +8,32 @@ import school.sptech.repository.LeituraDados;
 import school.sptech.repository.ConexaoBanco;
 import school.sptech.repository.ArtistaRepository;
 import school.sptech.repository.MusicaRepository;
+import school.sptech.service.S3Service;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        S3Service s3Service = new S3Service(new S3Provider());
+        String bucketName = "bucket-tech-music-test";
+
         try {
             ConexaoBanco conexaoBanco = new ConexaoBanco();
 
-            // Inicializar Logger com a conexão do banco
             Logger.conexaoBanco(conexaoBanco);
 
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Iniciando aplicação");
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Conexão estabelecida com sucesso");
 
+            s3Service.listarBuckets();
+            s3Service.listarObjetos(bucketName);
+            s3Service.baixarArquivo(bucketName);
+
             ArtistaRepository artistaRepository = new ArtistaRepository(conexaoBanco);
             MusicaRepository musicaRepository = new MusicaRepository(conexaoBanco);
 
             LeituraDados leituraDados = new LeituraDados();
-            List<Musica> musicas = leituraDados.lerMusicas("data/data_base.xlsx");
+            List<Musica> musicas = leituraDados.lerMusicas("data_base.xlsx");
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Total de " + musicas.size() + " músicas lidas");
 
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Processando artistas...");
@@ -54,7 +62,6 @@ public class Main {
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Dados salvos com sucesso!");
         } catch (Exception e) {
             Logger.error(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Erro na programa: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 }
