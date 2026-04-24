@@ -13,7 +13,7 @@ public class ConexaoBanco {
         Logger.info(ConexaoBanco.class.getPackageName().toString(), ConexaoBanco.class.getName().toString(), "Iniciando conexão com banco de dados");
 
         try {
-            String url = "jdbc:mysql://localhost:3306/tech_music";
+            String url = "jdbc:mysql://localhost:3307/tech_music";
             String username = "root";
             String password = "p0o9i8u7";
 

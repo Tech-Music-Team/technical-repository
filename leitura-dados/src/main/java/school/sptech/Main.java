@@ -37,6 +37,7 @@ public class Main {
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Total de " + musicas.size() + " músicas lidas");
 
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Processando artistas...");
+
             for (Musica m : musicas) {
                 Artista artista = m.getArtista();
                 if (artista != null) {
