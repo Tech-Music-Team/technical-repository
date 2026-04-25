@@ -14,7 +14,7 @@ public class ConexaoBanco {
 
         try {
             String host = System.getenv().getOrDefault("DB_HOST", "localhost");
-            String port = System.getenv().getOrDefault("DB_PORT", "3306");
+            String port = System.getenv().getOrDefault("DB_PORT", "3307");
             String database = System.getenv().getOrDefault("DB_DATABASE", "tech_music");
             String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
             String username = System.getenv().getOrDefault("DB_USER", "root");
