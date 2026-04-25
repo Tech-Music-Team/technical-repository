@@ -1,9 +1,15 @@
 resource "aws_instance" "server_prod" {
   ami                    = "ami-0ec10929233384c7f"
-  instance_type          = "t3.micro"
+  instance_type          = "t3.medium"
   key_name               = "chave-site-prod"
   vpc_security_group_ids = [aws_security_group.website-sg.id]
   iam_instance_profile   = "LabInstanceProfile"
+
+   root_block_device {
+    volume_size           = 20        
+    volume_type           = "gp3"     
+  
+  }
 
   user_data = <<-EOF
   #!/bin/bash
@@ -27,10 +33,8 @@ resource "aws_instance" "server_prod" {
   # Clona o repositório
   cd /home/ubuntu
   git clone https://github.com/Tech-Music-Team/technical-repository.git
-  cd technical-repository/Tech_Music_Team
-  docker-compose up --build -d
 EOF
-
+  
   tags = {
     Name        = "TechMusic_hml"
     Provisioned = "Terraform"
