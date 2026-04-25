@@ -34,7 +34,17 @@ public class Main {
 
             LeituraDados leituraDados = new LeituraDados();
             List<Musica> musicas = leituraDados.lerMusicas("data_base.xlsx");
-            Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Total de " + musicas.size() + " músicas lidas");
+            
+            // Contar artistas únicos lidos (agora garantido sem duplicatas por LeituraDados)
+            long totalArtistasUnicos = musicas.stream()
+                    .map(Musica::getArtista)
+                    .filter(artista -> artista != null)
+                    .map(Artista::getNome)
+                    .distinct()
+                    .count();
+            
+            Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), 
+                    "Total de " + musicas.size() + " músicas lidas e " + totalArtistasUnicos + " artistas únicos");
 
             Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Processando artistas...");
 
@@ -60,7 +70,8 @@ public class Main {
                 }
             }
 
-            Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Dados salvos com sucesso!");
+            Logger.info(Main.class.getPackageName().toString(), Main.class.getName().toString(), 
+                    "Processamento concluído com sucesso! " + musicas.size() + " músicas inseridas.");
         } catch (Exception e) {
             Logger.error(Main.class.getPackageName().toString(), Main.class.getName().toString(), "Erro na programa: " + e.getMessage());
         }
