@@ -1,3 +1,6 @@
 package-lock.json
 .idea
 leituradados/.idea
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform

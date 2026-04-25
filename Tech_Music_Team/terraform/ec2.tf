@@ -103,3 +103,12 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tcp" {
 output "ip_publico" {
   value = aws_instance.server_prod.public_ip
 }
+
+resource "aws_vpc_security_group_ingress_rule" "allow_tcp" {
+  security_group_id = aws_security_group.website-sg.id
+
+  cidr_ipv4   = "0.0.0.0/0"
+  from_port   = 3307
+  ip_protocol = "tcp"
+  to_port     = 3307
+}
