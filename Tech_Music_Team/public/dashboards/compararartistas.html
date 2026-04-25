@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Artistas - Tech Music</title>
+
+    <link rel="stylesheet" href="../css/compararartistas.css">
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="left-column">
+            <h2 class="logo-tipo">Tech Music</h2>
+            <hr class="divisor" />
+
+            <nav class="menu-nav">
+                <ul class="menu-group">
+                    <li class="menu-header">Artistas</li>
+                    <li>
+                        <a href="rankingartistas.html">
+                            <span class="material-symbols-outlined">person</span>
+                            Lista artistas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="analisarartista.html">
+                            <span class="material-symbols-outlined">analytics</span>
+                            Analisar artista
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="compararartistas.html">
+                            <span class="material-symbols-outlined">compare_arrows</span>
+                            Comparar artistas
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="menu-group">
+                    <li class="menu-header">Músicas</li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">library_music</span>
+                            Lista músicas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="analisarMusica.html">
+                            <span class="material-symbols-outlined">equalizer</span>
+                            Analisar música
+                        </a>
+                    </li>
+                    <li>
+                        <a href="compararmusicas.html">
+                            <span class="material-symbols-outlined">rule</span>
+                            Comparar músicas
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="menu-group">
+                    <li class="menu-header">Pessoal</li>
+                    <li>
+                        <a href="minhaSetList.html">
+                            <span class="material-symbols-outlined">queue_music</span>
+                            Minhas setlist
+                        </a>
+                    </li>
+                    <li>
+                        <a href="minhaPlaylist.html">
+                            <span class="material-symbols-outlined">featured_play_list</span>
+                            Minhas playlists
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="user-footer">
+                <div class="user-info">
+                    <img
+                        src="../Assets/perfil.png"
+                        alt="Foto de perfil"
+                        class="profile-img"
+                    />
+                    <div class="user-text">
+                        <p class="user-name">Jorge Luiz</p>
+                        <p class="user-role">Organizador de eventos</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Comparar artistas</h1>
+            </header>
+
+            <div class="profile-card">
+
+                <div class="full-artist-info">
+                    <div class="bloquinho">
+                        <div class="artist-photo-block">
+                            <img src="../Assets/michael.png" alt="artista 1" class="artist-photo" />
+                        </div>
+
+                        <div class="artist-info">
+                            <span class="artist-name-big">
+                                Michael <br> Jackson
+                            </span>
+
+                            <ul class="stats-grid">
+                                <li class="stat-item">
+                                    <span class="stat-label">Gênero</span>
+                                    <span class="stat-value">Pop</span>
+                                </li>
+                                <li class="stat-item">
+                                    <span class="stat-label">Popularidade</span>
+                                    <span class="stat-value">99</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="btn-setlist">
+                        <span class="material-symbols-outlined">playlist_add</span>
+                        Adicionar a setlist
+                    </button>
+                </div>
+
+                <div class="full-artist-info">
+                    <div class="bloquinho">
+                        <div class="artist-photo-block">
+                            <img src="../Assets/lisa.png" alt="artista 2" class="artist-photo" />
+                        </div>
+
+                        <div class="artist-info">
+                            <span class="artist-name-big">Lisa</span>
+
+                            <ul class="stats-grid">
+                                <li class="stat-item">
+                                    <span class="stat-label">Gênero</span>
+                                    <span class="stat-value">K-Pop</span>
+                                </li>
+                                <li class="stat-item">
+                                    <span class="stat-label">Popularidade</span>
+                                    <span class="stat-value">89</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button class="btn-setlist">
+                        <span class="material-symbols-outlined">playlist_add</span>
+                        Adicionar a setlist
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="ranking-controls">
+              <div class="tab-toggle">
+                <button class="tab-btn">Áudio</button>
+                <button class="tab-btn active">Engajamento</button>
+              </div>
+            </div>
+
+            <div class="cards-row">
+
+<div class="card">
+
+  <div class="card-header">
+    <div class="artist">
+      <span class="dot"></span>
+      Michael Jackson
+    </div>
+    <div class="listener">
+      Lisa
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">14.2B</span>
+      <span class="badge up"><span class="arrow">↑</span>+9.5%</span>
+    </div>
+    <div class="center">
+      <div class="label">Views</div>
+      <div class="delta">△ +7</div>
+    </div>
+    <div class="right">
+      <span class="value">8.7B</span>
+      <span class="badge down"><span class="arrow">↓</span>−9.5%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">1.2B</span>
+      <span class="badge up"><span class="arrow">↑</span>+7.4%</span>
+    </div>
+    <div class="center">
+      <div class="label">Streams</div>
+      <div class="delta">△ +5</div>
+    </div>
+    <div class="right">
+      <span class="value">740M</span>
+      <span class="badge down"><span class="arrow">↓</span>−7.4%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">48M</span>
+      <span class="badge down"><span class="arrow">↓</span>−24%</span>
+    </div>
+    <div class="center">
+      <div class="label">Likes</div>
+      <div class="delta">△ −1.7dB</div>
+    </div>
+    <div class="right">
+      <span class="value">29M</span>
+      <span class="badge up"><span class="arrow">↑</span>+24%</span>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="left">
+      <span class="value">3.4M</span>
+      <span class="badge up"><span class="arrow">↑</span>+50%</span>
+    </div>
+    <div class="center">
+      <div class="label">Comentários</div>
+      <div class="delta">△ +0.04</div>
+    </div>
+    <div class="right">
+      <span class="value">1.8M</span>
+      <span class="badge down"><span class="arrow">↓</span>−50%</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="engagement-grid">
+
+  <div class="eng-card">
+    <div class="eng-card-top">
+      <div>
+        <span class="eng-title">Engajamento Real</span>
+        <span class="eng-formula">(Likes+Comments)÷Views×100</span>
+      </div>
+    </div>
+    <p class="eng-desc">% que interagiu ativamente com o conteúdo — além da escuta passiva</p>
+    <div class="eng-row">
+      <span class="eng-dot dark"></span>
+      <span class="eng-name">Michael Jackson</span>
+      <span class="eng-badge up">↑</span>
+      <span class="eng-value">4.35%</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 80%"></div></div>
+    <div class="eng-row">
+      <span class="eng-dot light"></span>
+      <span class="eng-name">Lisa</span>
+      <span class="eng-badge down">↓</span>
+      <span class="eng-value">3.36%</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar light" style="width: 62%"></div></div>
+    <span class="eng-delta">△ +0.99pp</span>
+  </div>
+
+  <div class="eng-card">
+    <div class="eng-card-top">
+      <div>
+        <span class="eng-title">Conversão</span>
+        <span class="eng-formula">Likes ÷ Streams × 100</span>
+      </div>
+    </div>
+    <p class="eng-desc">de quem ouviu, quantos curtiram — fidelidade do ouvinte</p>
+    <div class="eng-row">
+      <span class="eng-dot dark"></span>
+      <span class="eng-name">Michael Jackson</span>
+      <span class="eng-badge neutral">=</span>
+      <span class="eng-value">0.34%</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 75%"></div></div>
+    <div class="eng-row">
+      <span class="eng-dot light"></span>
+      <span class="eng-name">Lisa</span>
+      <span class="eng-badge neutral">=</span>
+      <span class="eng-value">0.33%</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar light" style="width: 73%"></div></div>
+    <span class="eng-delta">△ ≈igual</span>
+  </div>
+
+  <div class="eng-card">
+    <div class="eng-card-top">
+      <div>
+        <span class="eng-title">Retenção</span>
+        <span class="eng-formula">Streams ÷ Views (×)</span>
+      </div>
+    </div>
+    <p class="eng-desc">quem viu o clipe voltou a ouvir — conversão clipe→streaming</p>
+    <div class="eng-row">
+      <span class="eng-dot dark"></span>
+      <span class="eng-name">Michael Jackson</span>
+      <span class="eng-badge neutral">=</span>
+      <span class="eng-value">11.8×</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 70%"></div></div>
+    <div class="eng-row">
+      <span class="eng-dot light"></span>
+      <span class="eng-name">Lisa</span>
+      <span class="eng-badge neutral">=</span>
+      <span class="eng-value">11.8×</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar light" style="width: 70%"></div></div>
+    <span class="eng-delta">△ idêntico</span>
+  </div>
+
+  <div class="eng-card">
+    <div class="eng-card-top">
+      <div>
+        <span class="eng-title">Buzz</span>
+        <span class="eng-formula">Comments ÷ Streams × 100</span>
+      </div>
+    </div>
+    <p class="eng-desc">proporção que comentou — capacidade de gerar conversa</p>
+    <div class="eng-row">
+      <span class="eng-dot dark"></span>
+      <span class="eng-name">Michael Jackson</span>
+      <span class="eng-badge up">↑</span>
+      <span class="eng-value">0.024%</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar dark" style="width: 78%"></div></div>
+    <div class="eng-row">
+      <span class="eng-dot light"></span>
+      <span class="eng-name">Lisa</span>
+      <span class="eng-badge down">↓</span>
+      <span class="eng-value">0.021%</span>
+    </div>
+    <div class="eng-bar-track"><div class="eng-bar light" style="width: 68%"></div></div>
+    <span class="eng-delta">△ +0.003pp</span>
+  </div>
+
+</div>
+</div>
+
+        </main>
+    </div>
+</body>
+</html>
