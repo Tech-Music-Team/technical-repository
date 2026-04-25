@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class LeituraDados {
@@ -19,8 +21,8 @@ public class LeituraDados {
     }
 
     public List<Musica> lerMusicas(String caminhoArquivo) {
-        List<Musica> musicas = new ArrayList<>();
-        List<Artista> artistas = new ArrayList<>();
+        Map<String, Musica> musicasMap = new HashMap<>();
+        Map<String, Artista> artistasMap = new HashMap<>();
         
         Logger.info(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Iniciando leitura do arquivo: " + caminhoArquivo);
 
@@ -29,6 +31,7 @@ public class LeituraDados {
 
             Sheet baseUnificada = workbook.getSheetAt(0);
             int linhasProcessadas = 0;
+            int linhasIgnoradas = 0;
 
             for (Row row : baseUnificada) {
                 if (row.getRowNum() == 0) continue;
@@ -55,57 +58,64 @@ public class LeituraDados {
                 Long artistFollowers = getCellValueAsLong(row.getCell(5));
                 String artistGenres = getCellValueAsString(row.getCell(6));
 
-                // Verifica se a música já existe na lista
-                Musica musicaExistente = null;
-                for (Musica m : musicas) {
-                    if (m.getIdTrack().equals(trackId)) {
-                        musicaExistente = m;
-                        break;
-                    }
-                }
-
-                if (musicaExistente != null) {
-                    Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Música duplicada detectada: " + trackId);
+                // Validar trackId
+                trackId = trackId.trim();
+                if (trackId.isEmpty()) {
+                    Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "TrackId vazio ou inválido, linha " + row.getRowNum() + " ignorada");
+                    linhasIgnoradas++;
                     continue;
                 }
 
-                // Cria nova música
+                // Verificar se a música já existe (O(1) lookup em HashMap)
+                if (musicasMap.containsKey(trackId)) {
+                    Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Música duplicada detectada: " + trackId);
+                    linhasIgnoradas++;
+                    continue;
+                }
+
+                // Normalizar artistName (trim, mantendo case-sensitivity)
+                artistName = artistName.trim();
+                if (artistName.isEmpty()) {
+                    Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Nome do artista vazio, linha " + row.getRowNum() + " ignorada");
+                    linhasIgnoradas++;
+                    continue;
+                }
+
+                // Criar nova música
                 Musica musica = new Musica(trackId, stream, title, trackName, views, likes, comments,
                         danceability, valence, energy, instrumentalness, speechiness,
                         loudness, trackPopularity, null);
 
-                // Verifica se o artista já existe na lista
-                Artista artistaExistente = null;
-                for (Artista a : artistas) {
-                    if (a.getNome().equals(artistName)) {
-                        artistaExistente = a;
-                        break;
-                    }
-                }
-
-                if (artistaExistente == null) {
-                    Artista novoArtista = new Artista(artistName, artistPopularity, artistGenres,
-                            artistFollowers, views, likes);
-                    artistas.add(novoArtista);
-                    musica.setArtista(novoArtista);
+                // Gerenciar artista (O(1) lookup em HashMap)
+                Artista artista;
+                if (artistasMap.containsKey(artistName)) {
+                    // Artista já existe - reutilizar e contabilizar
+                    artista = artistasMap.get(artistName);
+                    artista.setLikes(artista.getLikes() + likes);
+                    artista.setViews(artista.getViews() + views);
+                    Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Artista existente atualizado: " + artistName);
                 } else {
-                    artistaExistente.setLikes(artistaExistente.getLikes() + likes);
-                    artistaExistente.setViews(artistaExistente.getViews() + views);
-                    musica.setArtista(artistaExistente);
+                    // Novo artista - criar e adicionar ao mapa
+                    artista = new Artista(artistName, artistPopularity, artistGenres,
+                            artistFollowers, views, likes);
+                    artistasMap.put(artistName, artista);
+                    Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Novo artista adicionado: " + artistName);
                 }
 
-                musicas.add(musica);
+                musica.setArtista(artista);
+                musicasMap.put(trackId, musica);
                 linhasProcessadas++;
             }
             
-            Logger.info(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Leitura concluída: " + linhasProcessadas + " linhas processadas");
+            Logger.info(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), 
+                    "Leitura concluída: " + linhasProcessadas + " linhas processadas, " + linhasIgnoradas + " duplicadas/inválidas ignoradas");
 
         } catch (IOException e) {
             Logger.error(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Erro ao ler arquivo Excel: " + e.getMessage());
-            return musicas;
+            return new ArrayList<>();
         }
 
-        return musicas;
+        return new ArrayList<>(musicasMap.values());
     }
 
     private String getCellValueAsString(Cell cell) {
