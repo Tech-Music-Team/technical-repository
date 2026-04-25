@@ -104,7 +104,7 @@ output "ip_publico" {
   value = aws_instance.server_prod.public_ip
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_tcp" {
+resource "aws_vpc_security_group_ingress_rule" "allow_tcp_3307" {
   security_group_id = aws_security_group.website-sg.id
 
   cidr_ipv4   = "0.0.0.0/0"
