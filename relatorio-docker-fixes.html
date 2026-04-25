@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório de Correções — Docker Compose & ETL</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      color: #2d3748;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a202c, #2d3748);
+      color: white;
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #a0aec0;
+      font-size: 0.95rem;
+    }
+
+    header .meta {
+      margin-top: 16px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    header .meta span {
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+    }
+
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      background: #e53e3e;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge.fix { background: #38a169; }
+    .badge.info { background: #3182ce; }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #1a202c;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: #2d3748;
+      margin: 20px 0 8px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: 12px;
+    }
+
+    .problem-box {
+      background: #fff5f5;
+      border-left: 4px solid #e53e3e;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+
+    .solution-box {
+      background: #f0fff4;
+      border-left: 4px solid #38a169;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+
+    .problem-box strong, .solution-box strong {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      color: #718096;
+    }
+
+    pre {
+      background: #1a202c;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 12px 0;
+    }
+
+    code {
+      font-family: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+    }
+
+    pre code { color: #e2e8f0; }
+
+    .highlight { color: #68d391; }
+    .comment  { color: #718096; font-style: italic; }
+    .keyword  { color: #90cdf4; }
+    .string   { color: #fbd38d; }
+
+    .file-tag {
+      display: inline-block;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 0.82rem;
+      font-family: monospace;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #2d3748;
+      color: white;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #f7fafc; }
+
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid #d69e2e;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+
+    .warning-box strong {
+      color: #b7791f;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      background: #2d3748;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    footer {
+      text-align: center;
+      color: #a0aec0;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Relatório de Correções — Docker Compose &amp; ETL</h1>
+    <p>Documentação das correções aplicadas para funcionamento correto do ambiente containerizado.</p>
+    <div class="meta">
+      <span>Projeto: Tech Music Team</span>
+      <span>Data: 25/04/2026</span>
+      <span>Autor: Jorge Luiz</span>
+      <span>3 problemas corrigidos</span>
+    </div>
+  </header>
+
+  <!-- CONTEXTO -->
+  <div class="section">
+    <div class="section-header">
+      <span class="badge info">Contexto</span>
+      <h2>Visão Geral do Ambiente</h2>
+    </div>
+    <p>
+      O projeto utiliza Docker Compose para orquestrar três serviços: a aplicação web (<code>app</code>),
+      o banco de dados MySQL (<code>db</code>) e o ETL em Java (<code>jar</code>).
+      O serviço <code>jar</code> é responsável por baixar arquivos do S3 (AWS Academy) e inserir
+      os dados no banco MySQL.
+    </p>
+    <p>
+      Ao executar <code>docker-compose up --build</code>, três problemas foram identificados nos logs
+      que impediam o ETL de funcionar corretamente.
+    </p>
+  </div>
+
+  <!-- PROBLEMA 1 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="badge">Problema 1</span>
+      <h2>URL de Conexão Hardcoded</h2>
+    </div>
+
+    <span class="file-tag">leitura-dados/src/main/java/school/sptech/repository/ConexaoBanco.java</span>
+
+    <div class="problem-box">
+      <strong>Causa</strong>
+      A URL de conexão com o banco estava fixada no código como <code>localhost:3307</code>.
+      Dentro do Docker, cada serviço possui sua própria rede isolada — o container <code>jar</code>
+      não enxerga o banco como <code>localhost</code>, mas sim pelo nome do serviço definido no compose (<code>db</code>).
+      A porta interna do MySQL dentro da rede Docker é <code>3306</code>, não <code>3307</code>
+      (que é apenas o mapeamento para o host).
+    </div>
+
+    <div class="problem-box">
+      <strong>Erro nos logs</strong>
+      <code>Erro ao gravar log no banco de dados: Failed to obtain JDBC Connection</code>
+    </div>
+
+    <h3>Antes</h3>
+    <pre><code><span class="keyword">String</span> url      = <span class="string">"jdbc:mysql://localhost:3307/tech_music"</span>;
+<span class="keyword">String</span> username = <span class="string">"root"</span>;
+<span class="keyword">String</span> password = <span class="string">"p0o9i8u7"</span>;</code></pre>
+
+    <h3>Depois</h3>
+    <pre><code><span class="keyword">String</span> host     = System.getenv().getOrDefault(<span class="string">"DB_HOST"</span>,     <span class="string">"localhost"</span>);
+<span class="keyword">String</span> port     = System.getenv().getOrDefault(<span class="string">"DB_PORT"</span>,     <span class="string">"3307"</span>);
+<span class="keyword">String</span> database = System.getenv().getOrDefault(<span class="string">"DB_DATABASE"</span>, <span class="string">"tech_music"</span>);
+<span class="keyword">String</span> url      = <span class="string">"jdbc:mysql://"</span> + host + <span class="string">":"</span> + port + <span class="string">"/"</span> + database;
+<span class="keyword">String</span> username = System.getenv().getOrDefault(<span class="string">"DB_USER"</span>,     <span class="string">"root"</span>);
+<span class="keyword">String</span> password = System.getenv().getOrDefault(<span class="string">"DB_PASSWORD"</span>, <span class="string">"p0o9i8u7"</span>);</code></pre>
+
+    <div class="solution-box">
+      <strong>Explicação</strong>
+      <code>System.getenv().getOrDefault("VARIAVEL", "fallback")</code> lê a variável de ambiente
+      injetada pelo Docker Compose. Se não existir (rodando localmente), usa o valor padrão.
+      Assim o mesmo código funciona em ambos os ambientes.
+    </div>
+  </div>
+
+  <!-- PROBLEMA 2 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="badge">Problema 2</span>
+      <h2>Race Condition — Jar iniciando antes do MySQL estar pronto</h2>
+    </div>
+
+    <span class="file-tag">Tech_Music_Team/docker-compose.yaml</span>
+
+    <div class="problem-box">
+      <strong>Causa</strong>
+      O <code>depends_on: - db</code> padrão do Docker Compose apenas aguarda o <strong>container</strong>
+      do MySQL iniciar — não garante que o MySQL dentro dele esteja pronto para aceitar conexões.
+      O MySQL leva alguns segundos para inicializar, criar o banco e executar os scripts DDL/DML.
+      O serviço <code>jar</code> subia imediatamente e tentava conectar nesse intervalo, falhando.
+    </div>
+
+    <h3>Antes</h3>
+    <pre><code>jar:
+  depends_on:
+    - db
+  build: ../leitura-dados</code></pre>
+
+    <h3>Depois</h3>
+    <pre><code>db:
+  image: mysql:8.0
+  <span class="highlight">healthcheck:</span>
+    <span class="highlight">test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pp0o9i8u7"]</span>
+    <span class="highlight">interval: 10s</span>     <span class="comment"># testa a cada 10 segundos</span>
+    <span class="highlight">timeout: 5s</span>      <span class="comment"># desiste se demorar mais de 5s</span>
+    <span class="highlight">retries: 5</span>       <span class="comment"># tenta 5 vezes antes de marcar como unhealthy</span>
+    <span class="highlight">start_period: 30s</span> <span class="comment"># aguarda 30s antes de começar a contar</span>
+
+jar:
+  depends_on:
+    db:
+      <span class="highlight">condition: service_healthy</span>   <span class="comment"># só sobe quando o healthcheck passar</span>
+  build: ../leitura-dados</code></pre>
+
+    <div class="solution-box">
+      <strong>Explicação</strong>
+      O <code>healthcheck</code> faz o Docker testar periodicamente se o MySQL está respondendo
+      via <code>mysqladmin ping</code>. Apenas quando esse teste passar (MySQL realmente pronto),
+      o <code>condition: service_healthy</code> libera o container <code>jar</code> para subir.
+    </div>
+  </div>
+
+  <!-- PROBLEMA 3 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="badge">Problema 3</span>
+      <h2>Credenciais AWS não passadas ao container</h2>
+    </div>
+
+    <span class="file-tag">Tech_Music_Team/docker-compose.yaml</span>
+
+    <div class="problem-box">
+      <strong>Causa</strong>
+      O serviço <code>jar</code> acessa o S3 da AWS Academy, mas as credenciais não estavam
+      sendo injetadas no container. O SDK da AWS tenta encontrar credenciais em várias fontes
+      (variáveis de ambiente, arquivo de perfil, EC2 metadata...) e não encontrou nenhuma.
+    </div>
+
+    <div class="problem-box">
+      <strong>Erro nos logs</strong>
+      <code>Unable to load credentials from any of the providers in the chain AwsCredentialsProviderChain...</code>
+    </div>
+
+    <div class="warning-box">
+      <strong>Atenção — AWS Academy</strong>
+      A AWS Academy utiliza credenciais temporárias com duração limitada (~4 horas).
+      Além de <code>AWS_ACCESS_KEY_ID</code> e <code>AWS_SECRET_ACCESS_KEY</code>,
+      é obrigatório passar o <code>AWS_SESSION_TOKEN</code>.
+    </div>
+
+    <h3>Adicionado ao docker-compose.yaml (serviço jar)</h3>
+    <pre><code>jar:
+  environment:
+    DB_HOST: db
+    DB_PORT: 3306
+    DB_DATABASE: tech_music
+    DB_USER: root
+    DB_PASSWORD: p0o9i8u7
+    <span class="highlight">AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}</span>
+    <span class="highlight">AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}</span>
+    <span class="highlight">AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN}</span>
+    <span class="highlight">AWS_REGION: ${AWS_REGION:-us-east-1}</span></code></pre>
+
+    <div class="solution-box">
+      <strong>Explicação</strong>
+      A sintaxe <code>${VARIAVEL}</code> faz o Docker Compose ler o valor do terminal do host
+      e injetar no container. As credenciais nunca ficam salvas no código — ficam apenas
+      na sessão do terminal de quem executa o compose.
+    </div>
+  </div>
+
+  <!-- COMO RODAR -->
+  <div class="section">
+    <div class="section-header">
+      <span class="badge fix">Como Rodar</span>
+      <h2>Passo a Passo para Executar o Ambiente</h2>
+    </div>
+
+    <p>As credenciais da AWS Academy ficam disponíveis no painel do Learner Lab em <strong>AWS Details → AWS CLI</strong>.</p>
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <div>
+        <strong>Abrir o PowerShell na pasta do projeto</strong>
+        <pre><code>cd Tech_Music_Team</code></pre>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div>
+        <strong>Exportar as credenciais AWS no terminal</strong>
+        <pre><code>$env:AWS_ACCESS_KEY_ID     = "ASIA..."
+$env:AWS_SECRET_ACCESS_KEY = "abc123..."
+$env:AWS_SESSION_TOKEN     = "FwoG..."</code></pre>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div>
+        <strong>Subir o ambiente</strong>
+        <pre><code>docker-compose up --build</code></pre>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>Lembrete</strong>
+      As credenciais da AWS Academy expiram a cada ~4 horas. Sempre que isso acontecer,
+      repita o passo 2 com as novas credenciais e execute <code>docker-compose up --build</code> novamente.
+    </div>
+  </div>
+
+  <!-- RESUMO -->
+  <div class="section">
+    <div class="section-header">
+      <span class="badge fix">Resumo</span>
+      <h2>Tabela de Correções</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Problema</th>
+          <th>Arquivo</th>
+          <th>Causa</th>
+          <th>Solução</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>URL de conexão errada</td>
+          <td><code>ConexaoBanco.java</code></td>
+          <td><code>localhost:3307</code> não funciona dentro do Docker</td>
+          <td>Leitura via <code>System.getenv()</code> com fallback</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Race condition</td>
+          <td><code>docker-compose.yaml</code></td>
+          <td><code>depends_on</code> não aguarda MySQL estar pronto</td>
+          <td><code>healthcheck</code> + <code>condition: service_healthy</code></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Credenciais AWS ausentes</td>
+          <td><code>docker-compose.yaml</code></td>
+          <td>Variáveis AWS não injetadas no container</td>
+          <td>Bloco <code>environment</code> com <code>${VAR}</code> do host</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>Tech Music Team — SPTECH &nbsp;|&nbsp; Gerado em 25/04/2026</p>
+  </footer>
+
+</div>
+</body>
+</html>

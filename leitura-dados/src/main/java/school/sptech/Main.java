@@ -15,7 +15,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         S3Service s3Service = new S3Service(new S3Provider());
-        String bucketName = "bucket-tech-music-test";
+        String bucketName = "tech-music-raw";
 
         try {
             ConexaoBanco conexaoBanco = new ConexaoBanco();

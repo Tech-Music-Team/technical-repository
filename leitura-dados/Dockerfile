@@ -9,7 +9,7 @@ RUN mvn clean package
 FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
-COPY --from=builder /builder/target/*.jar app.jar
+COPY --from=builder /build/target/leitura-tech-music-1.0-SNAPSHOT.jar app.jar
 
 CMD ["java", "-jar", "app.jar"]
 
