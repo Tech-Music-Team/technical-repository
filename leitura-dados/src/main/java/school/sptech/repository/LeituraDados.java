@@ -58,7 +58,6 @@ public class LeituraDados {
                 Long artistFollowers = getCellValueAsLong(row.getCell(5));
                 String artistGenres = getCellValueAsString(row.getCell(6));
 
-                // Validar trackId
                 trackId = trackId.trim();
                 if (trackId.isEmpty()) {
                     Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "TrackId vazio ou inválido, linha " + row.getRowNum() + " ignorada");
@@ -66,14 +65,12 @@ public class LeituraDados {
                     continue;
                 }
 
-                // Verificar se a música já existe (O(1) lookup em HashMap)
                 if (musicasMap.containsKey(trackId)) {
                     Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Música duplicada detectada: " + trackId);
                     linhasIgnoradas++;
                     continue;
                 }
 
-                // Normalizar artistName (trim, mantendo case-sensitivity)
                 artistName = artistName.trim();
                 if (artistName.isEmpty()) {
                     Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Nome do artista vazio, linha " + row.getRowNum() + " ignorada");
@@ -81,21 +78,19 @@ public class LeituraDados {
                     continue;
                 }
 
-                // Criar nova música
                 Musica musica = new Musica(trackId, stream, title, trackName, views, likes, comments,
                         danceability, valence, energy, instrumentalness, speechiness,
                         loudness, trackPopularity, null);
 
-                // Gerenciar artista (O(1) lookup em HashMap)
                 Artista artista;
                 if (artistasMap.containsKey(artistName)) {
-                    // Artista já existe - reutilizar e contabilizar
+                    // Artista já existe
                     artista = artistasMap.get(artistName);
                     artista.setLikes(artista.getLikes() + likes);
                     artista.setViews(artista.getViews() + views);
                     Logger.debug(LeituraDados.class.getPackageName().toString(), LeituraDados.class.getName().toString(), "Artista existente atualizado: " + artistName);
                 } else {
-                    // Novo artista - criar e adicionar ao mapa
+                    // Novo artista
                     artista = new Artista(artistName, artistPopularity, artistGenres,
                             artistFollowers, views, likes);
                     artistasMap.put(artistName, artista);
