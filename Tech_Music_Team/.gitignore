@@ -10,3 +10,5 @@ package-lock.json
 /terraform terraform.tfstate.backup
 /terraform .terraformrc
 /terraform .terraformignore
+
+CLAUDE.md

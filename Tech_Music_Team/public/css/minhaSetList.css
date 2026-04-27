@@ -583,20 +583,39 @@
 }
 
 
-.status-setlist{
+.status-setlist {
     display: flex;
     flex-direction: row;
-    gap: 2px;
-
-}
-
-.status-setlist .circulo{
-    background-color: yellow;
-    width: 15px;
-    
-    border-radius: 100%;
-}
-
-.status-setlist{
+    align-items: center;
+    gap: 6px;
     font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.status-setlist .circulo {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-setlist.realizado {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.status-setlist.realizado .circulo {
+    background-color: #16a34a;
+}
+
+.status-setlist.pendente {
+    background-color: #fef9c3;
+    color: #ca8a04;
+}
+
+.status-setlist.pendente .circulo {
+    background-color: #eab308;
 }
