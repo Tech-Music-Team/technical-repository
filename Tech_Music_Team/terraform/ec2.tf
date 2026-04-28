@@ -1,7 +1,7 @@
 resource "aws_instance" "server_prod" {
   ami                    = "ami-0ec10929233384c7f"
   instance_type          = "t3.medium"
-  key_name               = "chave-site-prod"
+  key_name               = "chave-pi"
   vpc_security_group_ids = [aws_security_group.website-sg.id]
   iam_instance_profile   = "LabInstanceProfile"
 
