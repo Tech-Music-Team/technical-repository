@@ -20,9 +20,6 @@
     overflow: hidden;
 }
 
-
-/*  SIDEBAR  */
-
 .left-column {
     width: 260px;
     background: linear-gradient(to bottom, #1A0A2E 0%, #210B3C 100%);
@@ -136,9 +133,6 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-
-/*  MAIN  */
-
 .main-content {
     flex: 1;
     display: flex;
@@ -162,33 +156,6 @@
     color: #1A0A2E;
 }
 
-.btn-setlist {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1.5px solid #A855F7;
-    border-radius: 25px;
-    padding: 8px 18px;
-    background-color: white;
-    color: #A855F7;
-    font-weight: 600;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-setlist:hover {
-    background-color: #A855F7;
-    color: white;
-}
-
-.btn-setlist .material-symbols-outlined {
-    font-size: 18px;
-}
-
-
-/*  BODY  */
-
 .artist-body {
     flex: 1;
     display: flex;
@@ -199,368 +166,246 @@
     background-color: #f8f9fa;
 }
 
-
-/*  SEÇÃO SUPERIOR  */
-
-.artist-top-section {
+.music-card {
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
-}
-
-.artist-photo-block {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.artist-photo {
-    width: 150px;
-    height: 170px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.artist-name-big {
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #1A0A2E;
-}
-
-.profile-card {
-    flex: 1;
-    position: relative;
+    gap: 24px;
     background-color: white;
     border: 1.5px solid #e0d5f2;
     border-radius: 12px;
-    padding: 16px 20px;
+    padding: 20px 24px;
 }
 
-.profile-card-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: #1A0A2E;
-    text-align: start;
-    margin-left: 15px;
-}
-
-.profile-card-inner {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.radar-wrapper {
-    width: 230px;
-    height: 230px;
+.music-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover;
     flex-shrink: 0;
-    position: relative;
-    left:15px;
-    overflow: visible;
 }
 
-.radar-wrapper canvas {
-    width: 100% !important;
-    height: 100% !important;   
-     
-}
-
-
-/*   GRID  */
-
-.stats-grid {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    list-style: none;
-    width: 450px;
-    right: 60px;
-
-}
-
-.stat-item {
+.music-info {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    background-color: #f8f4ff;
-    border-radius: 8px;
-    padding: 6px 14px;
-    max-width: 200px;
+    min-width: 160px;
 }
 
-.stat-label {
-    font-size: 10px;
+.music-label {
+    font-size: 11px;
     color: #A855F7;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.stat-value {
+.music-title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A0A2E;
+    line-height: 1.1;
+}
+
+.music-artist {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.music-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.meta-label {
+    font-size: 9px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.meta-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A0A2E;
+}
+
+.music-stats {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+}
+
+.stat-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background-color: #f8f4ff;
+    border: 1.5px solid #e0d5f2;
+    border-radius: 12px;
+    padding: 10px 18px;
+    min-width: 75px;
+}
+
+.stat-pill .material-symbols-outlined {
+    font-size: 20px;
+    color: #A855F7;
+}
+
+.pill-value {
     font-size: 16px;
     font-weight: 700;
     color: #1A0A2E;
 }
 
-.genre-badge {
-    background-color: #A855F7;
-    color: white;
-    border-radius: 20px;
-    padding: 2px 12px;
-    font-size: 13px;
-    display: inline-block;
-    width: fit-content;
-}
-
-
-/*  CONTROLES  */
-
-.ranking-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.tab-toggle {
-    display: flex;
-    border: 1.5px solid #A855F7;
-    border-radius: 25px;
-    overflow: hidden;
-}
-
-.tab-btn {
-    padding: 7px 18px;
-    font-size: 13px;
+.pill-label {
+    font-size: 9px;
+    color: #999;
+    text-transform: uppercase;
     font-weight: 600;
-    cursor: pointer;
-    border: none;
-    background-color: white;
-    color: #A855F7;
-    transition: all 0.2s ease;
+    text-align: center;
 }
 
-.tab-btn.active {
-    background-color: #A855F7;
-    color: white;
-}
-
-.tab-toggle button:not(.active):hover {
-    background-color: #f8f4ff;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e0d5f2;
-    border-radius: 50px;
-    padding: 4px 15px;
-    background-color: #fff;
-}
-
-.search-container input {
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 200px;
-    font-size: 14px;
-    color: #666;
-}
-
-.btn-pesquisar {
-    background: none;
-    border: none;
-    color: #A855F7;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: 500;
-    padding: 0 5px;
-}
-
-.btn-filtrar {
+.btn-playlist {
     display: flex;
     align-items: center;
     gap: 8px;
+    border: 1.5px solid #A855F7;
+    border-radius: 25px;
+    padding: 8px 18px;
     background-color: white;
-    border: 1px solid #e0d5f2;
-    border-radius: 8px;
-    padding: 4px 8px;
     color: #A855F7;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 13px;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-left: auto;
 }
 
-.btn-filtrar:hover {
-    background-color: #f8f4ff;
-}
-
-.order-toggle {
-    display: flex;
-    border: 1px solid #A855F7;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.order-toggle button {
-    background-color: white;
-    border: none;
-    color: #A855F7;
-    padding: 6px 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.order-toggle button.active {
+.btn-playlist:hover {
     background-color: #A855F7;
     color: white;
 }
 
-.order-toggle button:not(.active):hover {
-    background-color: #f8f4ff;
+.btn-playlist .material-symbols-outlined {
+    font-size: 18px;
 }
 
-.ranking-controls .material-symbols-outlined {
-    font-size: 20px;
-}
-
-
-/*  CARDS  */
-
-.ranking-body {
+.bottom-section {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 15px;
-    padding: 12px 30px;
+.perfil-card {
     background-color: white;
     border: 1.5px solid #e0d5f2;
     border-radius: 12px;
-    transition: all 0.3s ease;
-    width: 90%;
-    margin: 0 auto;
+    padding: 20px 24px;
+    flex: 1;
 }
 
-.card:hover {
+.mood-card {
+    background-color: white;
+    border: 1.5px solid #e0d5f2;
+    border-radius: 12px;
+    padding: 20px 24px;
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A0A2E;
+    margin-bottom: 12px;
+}
+
+.radar-wrapper {
+    width: auto;
+    height: 230px;
+    justify-items: center;
+}
+
+
+.mood-grid {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.mood-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background-color: #f8f9fa;
+    border: 1.5px solid #e0d5f2;
+    border-radius: 12px;
+    padding: 16px 12px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.mood-item:hover {
     border-color: #A855F7;
     box-shadow: 0 4px 12px rgba(168, 85, 247, 0.1);
 }
 
-.left-content-group {
-    display: flex;
-    align-items: center;
-    flex: 0 1 auto;
-    gap: 15px;
+.mood-icon {
+    font-size: 28px;
+    line-height: 1;
 }
 
-.ranking-number {
-    font-size: 32px;
-    font-weight: 300;
-    min-width: 50px;
-    text-align: left;
+.mood-name {
+    font-size: 11px;
+    color: #888;
+    font-weight: 500;
 }
 
-.card img {
-    width: 65px;
-    height: 65px;
-    border-radius: 8px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.artist-info-header {
-    display: flex;
-    flex-grow: 1;
-    margin-left: 10px;
-    flex-direction: column;
-    gap: 6px;
-    width: 150px;
-}
-
-.artist-name {
+.mood-value {
     font-size: 18px;
     font-weight: 700;
     color: #1A0A2E;
 }
 
-.genre {
-    font-size: 12px;
-    color: #999;
-}
-
-.card ul {
+.btn-comparar {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    list-style: none;
-    flex: 1;
+    align-items: center;
     justify-content: center;
-    margin-right: 20px;
-}
-
-.card li {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 4px;
-    background-color: transparent;
-    min-width: auto;
-    padding: 0;
-}
-
-.artist-atribute {
-    font-size: 9px;
-    color: #A855F7;
-    font-weight: 500;
-    text-transform: uppercase;
-    border-bottom: 1px solid #A855F7;
-    padding-bottom: 2px;
-}
-
-.atribute-value {
-    font-size: 10px;
-    font-weight: 600;
-    color: white;
-    background-color: #A855F7;
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-top: 2px;
-}
-
-.right-content-group {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.details-button {
-    padding: 8px 18px;
-    background-color: white;
     border: 1.5px solid #A855F7;
     border-radius: 25px;
-    margin-left: auto;
+    padding: 8px 20px;
+    background-color: white;
     color: #A855F7;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
     cursor: pointer;
     transition: all 0.3s ease;
-    white-space: nowrap;
+    align-self: flex-end;
+    margin-left: auto;
 }
 
-.details-button:hover {
+.btn-comparar:hover {
     background-color: #A855F7;
     color: white;
+}
+
+.btn-comparar .material-symbols-outlined {
+    font-size: 18px;
 }

@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ranking Artistas - Tech Music</title>
+    <title>Lista músicas - Tech Music</title>
 
-    <link rel="stylesheet" href="../css/rankingartistas.css" />
+    <link rel="stylesheet" href="../css/listamusicas.css" />
 
     <link
       rel="stylesheet"
@@ -25,7 +25,7 @@
         <nav class="menu-nav">
           <ul class="menu-group">
             <li class="menu-header">Artistas</li>
-            <li class="active">
+            <li>
               <a href="rankingartistas.html">
                 <span class="material-symbols-outlined">person</span>
                 Lista artistas
@@ -47,7 +47,7 @@
 
           <ul class="menu-group">
             <li class="menu-header">Músicas</li>
-            <li>
+            <li class="active">
               <a href="listamusicas.html">
                 <span class="material-symbols-outlined">library_music</span>
                 Lista músicas
@@ -83,7 +83,6 @@
             </li>
           </ul>
         </nav>
-
         <div class="user-footer">
           <div class="user-info">
             <img
@@ -91,6 +90,7 @@
               alt="Foto de perfil"
               class="profile-img"
             />
+
             <div class="user-text">
               <p class="user-name">Jorge Luiz</p>
               <p class="user-role">Organizador de eventos</p>
@@ -101,10 +101,10 @@
 
       <main class="main-content">
         <header class="top-header">
-          <h1>Ranking artistas</h1>
+          <h1>Lista músicas</h1>
 
           <div class="search-container">
-            <input type="text" placeholder="Buscar artista..." />
+            <input type="text" placeholder="Buscar música..." />
             <button class="btn-pesquisar">
               <span class="material-symbols-outlined">search</span>
               Pesquisar
@@ -127,119 +127,22 @@
         </header>
 
         <section class="ranking-body">
+
+          <!-- 1 -->
           <div class="card">
             <div class="left-content-group">
               <span class="ranking-number">1º</span>
-              <img src="../assets/image 2.png" alt="img-artista" />
+              <img src="https://i.scdn.co/image/ab67616d0000b273e0b60c608586d88252b8fbc9" />
               <div class="artist-info-header">
-                <span class="artist-name">Alee</span>
-                <span class="genre">Gênero: Trap</span>
+                <span class="artist-name">Blinding Lights</span>
+                <span class="genre">The Weeknd • Pop</span>
               </div>
             </div>
-            <ul>
-              <li>
-                <span class="artist-atribute">Popularidade</span>
-                <span class="atribute-value">96</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Streams</span>
-                <span class="atribute-value">4.2M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Views</span>
-                <span class="atribute-value">122M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Likes</span>
-                <span class="atribute-value">96K</span>
-              </li>
-            </ul>
-            <div class="right-content-group">
-              <button class="details-button">Detalhes do artista</button>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="left-content-group">
-              <span class="ranking-number">2º</span>
-              <img src="../assets/matue4.webp" alt="img-artista" />
-              <div class="artist-info-header">
-                <span class="artist-name">Matuê</span>
-                <span class="genre">Gênero: Trap BR</span>
-              </div>
-            </div>
             <ul>
               <li>
-                <span class="artist-atribute">Popularidade</span>
-                <span class="atribute-value">94</span>
-              </li>
-              <li>
                 <span class="artist-atribute">Streams</span>
-                <span class="atribute-value">8.5M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Views</span>
-                <span class="atribute-value">450M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Likes</span>
-                <span class="atribute-value">1.2M</span>
-              </li>
-            </ul>
-            <div class="right-content-group">
-              <button class="details-button">Detalhes do artista</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="left-content-group">
-              <span class="ranking-number">3º</span>
-              <img src="../assets/images.jfif" alt="img-artista" />
-              <div class="artist-info-header">
-                <span class="artist-name">The Weeknd</span>
-                <span class="genre">Gênero: R&B / Pop</span>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <span class="artist-atribute">Popularidade</span>
-                <span class="atribute-value">98</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Streams</span>
-                <span class="atribute-value">105M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Views</span>
-                <span class="atribute-value">2.1B</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Likes</span>
-                <span class="atribute-value">15M</span>
-              </li>
-            </ul>
-            <div class="right-content-group">
-              <button class="details-button">Detalhes do artista</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="left-content-group">
-              <span class="ranking-number">4º</span>
-              <img src="../assets/Travis_Scott.webp" alt="img-artista" />
-              <div class="artist-info-header">
-                <span class="artist-name">Travis Scott</span>
-                <span class="genre">Gênero: Hip-Hop</span>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <span class="artist-atribute">Popularidade</span>
-                <span class="atribute-value">92</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Streams</span>
-                <span class="atribute-value">45M</span>
+                <span class="atribute-value">3.8B</span>
               </li>
               <li>
                 <span class="artist-atribute">Views</span>
@@ -247,88 +150,116 @@
               </li>
               <li>
                 <span class="artist-atribute">Likes</span>
-                <span class="atribute-value">8M</span>
+                <span class="atribute-value">25M</span>
               </li>
             </ul>
+
             <div class="right-content-group">
-              <button class="details-button">Detalhes do artista</button>
+              <button class="details-button">Detalhes da música</button>
             </div>
           </div>
 
+          <!-- 2 -->
+          <div class="card">
+            <div class="left-content-group">
+              <span class="ranking-number">2º</span>
+              <img src="https://i.scdn.co/image/ab67616d0000b273cdb645498cd3c6dba3e1d6d8" />
+              <div class="artist-info-header">
+                <span class="artist-name">Shape of You</span>
+                <span class="genre">Ed Sheeran • Pop</span>
+              </div>
+            </div>
+
+            <ul>
+              <li><span class="artist-atribute">Streams</span><span class="atribute-value">3.5B</span></li>
+              <li><span class="artist-atribute">Views</span><span class="atribute-value">5.9B</span></li>
+              <li><span class="artist-atribute">Likes</span><span class="atribute-value">30M</span></li>
+            </ul>
+
+            <div class="right-content-group">
+              <button class="details-button">Detalhes da música</button>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="card">
+            <div class="left-content-group">
+              <span class="ranking-number">3º</span>
+              <img src="https://i.scdn.co/image/ab67616d0000b273f46b9d202509a5b8f1e7bcb1" />
+              <div class="artist-info-header">
+                <span class="artist-name">As It Was</span>
+                <span class="genre">Harry Styles • Pop</span>
+              </div>
+            </div>
+
+            <ul>
+              <li><span class="artist-atribute">Streams</span><span class="atribute-value">2.9B</span></li>
+              <li><span class="artist-atribute">Views</span><span class="atribute-value">700M</span></li>
+              <li><span class="artist-atribute">Likes</span><span class="atribute-value">20M</span></li>
+            </ul>
+
+            <div class="right-content-group">
+              <button class="details-button">Detalhes da música</button>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="card">
+            <div class="left-content-group">
+              <span class="ranking-number">4º</span>
+              <img src="https://i.scdn.co/image/ab67616d0000b2738a0d6c2aaf8b2d2d0a73e7c5" />
+              <div class="artist-info-header">
+                <span class="artist-name">God's Plan</span>
+                <span class="genre">Drake • Hip-Hop</span>
+              </div>
+            </div>
+
+            <ul>
+              <li><span class="artist-atribute">Streams</span><span class="atribute-value">2.5B</span></li>
+              <li><span class="artist-atribute">Views</span><span class="atribute-value">1.4B</span></li>
+              <li><span class="artist-atribute">Likes</span><span class="atribute-value">18M</span></li>
+            </ul>
+
+            <div class="right-content-group">
+              <button class="details-button">Detalhes da música</button>
+            </div>
+          </div>
+
+          <!-- 5 -->
           <div class="card">
             <div class="left-content-group">
               <span class="ranking-number">5º</span>
-              <img src="../assets/ab676161000051747635220f042a75ef8b4ffde9.jfif" alt="img-artista" />
+              <img src="https://i.scdn.co/image/ab67616d0000b273a26f3f9d8b8e0cbe0b61d5a5" />
               <div class="artist-info-header">
-                <span class="artist-name">Ludmilla</span>
-                <span class="genre">Gênero: Funk / Pop</span>
+                <span class="artist-name">Bad Guy</span>
+                <span class="genre">Billie Eilish • Pop</span>
               </div>
             </div>
+
             <ul>
-              <li>
-                <span class="artist-atribute">Popularidade</span>
-                <span class="atribute-value">89</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Streams</span>
-                <span class="atribute-value">12M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Views</span>
-                <span class="atribute-value">300M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Likes</span>
-                <span class="atribute-value">500K</span>
-              </li>
+              <li><span class="artist-atribute">Streams</span><span class="atribute-value">2.2B</span></li>
+              <li><span class="artist-atribute">Views</span><span class="atribute-value">1.1B</span></li>
+              <li><span class="artist-atribute">Likes</span><span class="atribute-value">22M</span></li>
             </ul>
+
             <div class="right-content-group">
-              <button class="details-button">Detalhes do artista</button>
+              <button class="details-button">Detalhes da música</button>
             </div>
           </div>
 
-          <div class="card">
-            <div class="left-content-group">
-              <span class="ranking-number">6º</span>
-              <img src="../assets/images (1).jfif" alt="img-artista" />
-              <div class="artist-info-header">
-                <span class="artist-name">Drake</span>
-                <span class="genre">Gênero: Rap / Pop</span>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <span class="artist-atribute">Popularidade</span>
-                <span class="atribute-value">95</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Streams</span>
-                <span class="atribute-value">80M</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Views</span>
-                <span class="atribute-value">1.5B</span>
-              </li>
-              <li>
-                <span class="artist-atribute">Likes</span>
-                <span class="atribute-value">10M</span>
-              </li>
-            </ul>
-            <div class="right-content-group">
-              <button class="details-button">Detalhes do artista</button>
-            </div>
-          </div>
         </section>
       </main>
     </div>
 
     <script>
       const rankings = document.querySelectorAll(".ranking-number");
+
       const cores = {
         "1º": "#D4AF37",
         "2º": "#A8A9AD",
         "3º": "#CD7F32",
       };
+
       rankings.forEach((el) => {
         const cor = cores[el.textContent.trim()];
         el.style.color = cor || "#000000";
