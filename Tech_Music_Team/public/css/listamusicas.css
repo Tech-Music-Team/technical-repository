@@ -23,7 +23,7 @@
 
 .left-column {
     width: 260px;
-    background:linear-gradient(to bottom, #1A0A2E 0%, #210B3C 100%);
+    background: linear-gradient(to bottom, #1A0A2E 0%, #210B3C 100%);
     color: white;
     display: flex;
     flex-direction: column;
@@ -41,8 +41,12 @@
     color: inherit;
 }
 
-.menu-nav{
-    flex:1;
+.logo-tipo {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.menu-nav {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -59,12 +63,24 @@
     gap: 10px;
     padding: 3px 0;
     font-size: 14px;
+    font-weight: 450;
     color: #b3b3b3;
     transition: 0.3s ease;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.menu-group li.active a{
+.menu-group li.active a {
     color: white;
+    font-weight: bold;
+}
+
+.menu-header {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 3px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .user-footer {
@@ -108,12 +124,14 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .user-role {
     font-size: 10px;
     color: #E9D5FF;
     white-space: nowrap;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 
