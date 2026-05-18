@@ -21,9 +21,9 @@ public class ConexaoBanco {
             String password = System.getenv().getOrDefault("DB_PASSWORD", "p0o9i8u7");
 
             BasicDataSource basicDataSource = new BasicDataSource();
-            basicDataSource.setUrl(url);
-            basicDataSource.setUsername(username);
-            basicDataSource.setPassword(password);
+            basicDataSource.setUrl("jdbc:mysql://localhost:/tech_music");
+            basicDataSource.setUsername("root");
+            basicDataSource.setPassword("p0o9i8u7");
 
             this.jdbcTemplate = new JdbcTemplate(basicDataSource);
             Logger.info(ConexaoBanco.class.getPackageName().toString(), ConexaoBanco.class.getName().toString(), "Conexão criado em: " + url);
